@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43868A4B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
+		43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4C1928EB590047149D /* CoreGraphics.framework */; };
+		43868A4F1928EB590047149D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4E1928EB590047149D /* UIKit.framework */; };
+		43868A551928EB590047149D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43868A531928EB590047149D /* InfoPlist.strings */; };
+		43868A571928EB590047149D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43868A561928EB590047149D /* main.m */; };
+		43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43868A5A1928EB590047149D /* BRAppDelegate.m */; };
+		43868A5E1928EB590047149D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43868A5C1928EB590047149D /* Main.storyboard */; };
+		43868A611928EB590047149D /* BRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43868A601928EB590047149D /* BRViewController.m */; };
+		43868A631928EB590047149D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43868A621928EB590047149D /* Images.xcassets */; };
+		43868A6A1928EB590047149D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A691928EB590047149D /* XCTest.framework */; };
+		43868A6B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
+		43868A6C1928EB590047149D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4E1928EB590047149D /* UIKit.framework */; };
+		43868A741928EB590047149D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43868A721928EB590047149D /* InfoPlist.strings */; };
+		43868A761928EB590047149D /* NetsendPDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43868A751928EB590047149D /* NetsendPDTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43868A6D1928EB590047149D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43868A3F1928EB580047149D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43868A461928EB590047149D;
+			remoteInfo = NetsendPD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43868A471928EB590047149D /* NetsendPD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetsendPD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43868A4A1928EB590047149D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43868A4C1928EB590047149D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43868A4E1928EB590047149D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		43868A521928EB590047149D /* NetsendPD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetsendPD-Info.plist"; sourceTree = "<group>"; };
+		43868A541928EB590047149D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43868A561928EB590047149D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43868A581928EB590047149D /* NetsendPD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetsendPD-Prefix.pch"; sourceTree = "<group>"; };
+		43868A591928EB590047149D /* BRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRAppDelegate.h; sourceTree = "<group>"; };
+		43868A5A1928EB590047149D /* BRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRAppDelegate.m; sourceTree = "<group>"; };
+		43868A5D1928EB590047149D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43868A5F1928EB590047149D /* BRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRViewController.h; sourceTree = "<group>"; };
+		43868A601928EB590047149D /* BRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRViewController.m; sourceTree = "<group>"; };
+		43868A621928EB590047149D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43868A681928EB590047149D /* NetsendPDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetsendPDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43868A691928EB590047149D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		43868A711928EB590047149D /* NetsendPDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetsendPDTests-Info.plist"; sourceTree = "<group>"; };
+		43868A731928EB590047149D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43868A751928EB590047149D /* NetsendPDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetsendPDTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43868A441928EB590047149D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */,
+				43868A4F1928EB590047149D /* UIKit.framework in Frameworks */,
+				43868A4B1928EB590047149D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43868A651928EB590047149D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A6A1928EB590047149D /* XCTest.framework in Frameworks */,
+				43868A6C1928EB590047149D /* UIKit.framework in Frameworks */,
+				43868A6B1928EB590047149D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43868A3E1928EB580047149D = {
+			isa = PBXGroup;
+			children = (
+				43868A501928EB590047149D /* NetsendPD */,
+				43868A6F1928EB590047149D /* NetsendPDTests */,
+				43868A491928EB590047149D /* Frameworks */,
+				43868A481928EB590047149D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43868A481928EB590047149D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43868A471928EB590047149D /* NetsendPD.app */,
+				43868A681928EB590047149D /* NetsendPDTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43868A491928EB590047149D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43868A4A1928EB590047149D /* Foundation.framework */,
+				43868A4C1928EB590047149D /* CoreGraphics.framework */,
+				43868A4E1928EB590047149D /* UIKit.framework */,
+				43868A691928EB590047149D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43868A501928EB590047149D /* NetsendPD */ = {
+			isa = PBXGroup;
+			children = (
+				43868A591928EB590047149D /* BRAppDelegate.h */,
+				43868A5A1928EB590047149D /* BRAppDelegate.m */,
+				43868A5C1928EB590047149D /* Main.storyboard */,
+				43868A5F1928EB590047149D /* BRViewController.h */,
+				43868A601928EB590047149D /* BRViewController.m */,
+				43868A621928EB590047149D /* Images.xcassets */,
+				43868A511928EB590047149D /* Supporting Files */,
+			);
+			path = NetsendPD;
+			sourceTree = "<group>";
+		};
+		43868A511928EB590047149D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43868A521928EB590047149D /* NetsendPD-Info.plist */,
+				43868A531928EB590047149D /* InfoPlist.strings */,
+				43868A561928EB590047149D /* main.m */,
+				43868A581928EB590047149D /* NetsendPD-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43868A6F1928EB590047149D /* NetsendPDTests */ = {
+			isa = PBXGroup;
+			children = (
+				43868A751928EB590047149D /* NetsendPDTests.m */,
+				43868A701928EB590047149D /* Supporting Files */,
+			);
+			path = NetsendPDTests;
+			sourceTree = "<group>";
+		};
+		43868A701928EB590047149D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43868A711928EB590047149D /* NetsendPDTests-Info.plist */,
+				43868A721928EB590047149D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43868A461928EB590047149D /* NetsendPD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43868A791928EB590047149D /* Build configuration list for PBXNativeTarget "NetsendPD" */;
+			buildPhases = (
+				43868A431928EB590047149D /* Sources */,
+				43868A441928EB590047149D /* Frameworks */,
+				43868A451928EB590047149D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetsendPD;
+			productName = NetsendPD;
+			productReference = 43868A471928EB590047149D /* NetsendPD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43868A671928EB590047149D /* NetsendPDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43868A7C1928EB590047149D /* Build configuration list for PBXNativeTarget "NetsendPDTests" */;
+			buildPhases = (
+				43868A641928EB590047149D /* Sources */,
+				43868A651928EB590047149D /* Frameworks */,
+				43868A661928EB590047149D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43868A6E1928EB590047149D /* PBXTargetDependency */,
+			);
+			name = NetsendPDTests;
+			productName = NetsendPDTests;
+			productReference = 43868A681928EB590047149D /* NetsendPDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43868A3F1928EB580047149D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Bektur Ryskeldiev";
+				TargetAttributes = {
+					43868A671928EB590047149D = {
+						TestTargetID = 43868A461928EB590047149D;
+					};
+				};
+			};
+			buildConfigurationList = 43868A421928EB580047149D /* Build configuration list for PBXProject "NetsendPD" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43868A3E1928EB580047149D;
+			productRefGroup = 43868A481928EB590047149D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43868A461928EB590047149D /* NetsendPD */,
+				43868A671928EB590047149D /* NetsendPDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43868A451928EB590047149D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A631928EB590047149D /* Images.xcassets in Resources */,
+				43868A551928EB590047149D /* InfoPlist.strings in Resources */,
+				43868A5E1928EB590047149D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43868A661928EB590047149D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A741928EB590047149D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43868A431928EB590047149D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A611928EB590047149D /* BRViewController.m in Sources */,
+				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
+				43868A571928EB590047149D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43868A641928EB590047149D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43868A761928EB590047149D /* NetsendPDTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43868A6E1928EB590047149D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43868A461928EB590047149D /* NetsendPD */;
+			targetProxy = 43868A6D1928EB590047149D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43868A531928EB590047149D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43868A541928EB590047149D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		43868A5C1928EB590047149D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43868A5D1928EB590047149D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43868A721928EB590047149D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43868A731928EB590047149D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43868A771928EB590047149D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		43868A781928EB590047149D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43868A7A1928EB590047149D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
+				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43868A7B1928EB590047149D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
+				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		43868A7D1928EB590047149D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetsendPD.app/NetsendPD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NetsendPDTests/NetsendPDTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		43868A7E1928EB590047149D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetsendPD.app/NetsendPD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
+				INFOPLIST_FILE = "NetsendPDTests/NetsendPDTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43868A421928EB580047149D /* Build configuration list for PBXProject "NetsendPD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43868A771928EB590047149D /* Debug */,
+				43868A781928EB590047149D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43868A791928EB590047149D /* Build configuration list for PBXNativeTarget "NetsendPD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43868A7A1928EB590047149D /* Debug */,
+				43868A7B1928EB590047149D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43868A7C1928EB590047149D /* Build configuration list for PBXNativeTarget "NetsendPDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43868A7D1928EB590047149D /* Debug */,
+				43868A7E1928EB590047149D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43868A3F1928EB580047149D /* Project object */;
+}
