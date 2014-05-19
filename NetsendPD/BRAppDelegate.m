@@ -7,12 +7,33 @@
 //
 
 #import "BRAppDelegate.h"
+#import "PdAudioController.h"
+
+@interface BRAppDelegate ()
+{
+    PdAudioController *pdAudioController;
+}
+
+@end
 
 @implementation BRAppDelegate
 
+extern void udpsend_tilde_setup(void);
+extern void udpreceive_tilde_setup(void);
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    pdAudioController = [[PdAudioController alloc] init];
+    [pdAudioController configurePlaybackWithSampleRate:44100
+                                        numberChannels:2
+                                          inputEnabled:YES
+                                         mixingEnabled:NO];
+    
+    udpreceive_tilde_setup();
+    udpsend_tilde_setup();
+    
+    
     return YES;
 }
 							

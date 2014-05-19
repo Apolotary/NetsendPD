@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; };
+		431E2923192A59D100F8646B /* httpreq.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2907192A59BB00F8646B /* httpreq.c */; };
+		431E2924192A59D100F8646B /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290C192A59BB00F8646B /* tcpclient.c */; };
+		431E2925192A59D100F8646B /* tcpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290E192A59BB00F8646B /* tcpreceive.c */; };
+		431E2926192A59D100F8646B /* tcpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2910192A59BB00F8646B /* tcpsend.c */; };
+		431E2927192A59D100F8646B /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2912192A59BB00F8646B /* tcpserver.c */; };
+		431E2928192A59D100F8646B /* udpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291A192A59BB00F8646B /* udpreceive.c */; };
+		431E292A192A59D100F8646B /* udpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291E192A59BB00F8646B /* udpsend.c */; };
+		431E292C192A59D100F8646B /* udpsend~.h in Sources */ = {isa = PBXBuildFile; fileRef = 431E2921192A59BB00F8646B /* udpsend~.h */; };
+		431E2931192A5AD000F8646B /* udpreceive~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2930192A5AD000F8646B /* udpreceive~.c */; };
+		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; };
+		43619CCD1929F764006084CF /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCA1929F74E006084CF /* libpd-ios.a */; };
+		43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCE1929F769006084CF /* AudioToolbox.framework */; };
+		43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CD21929F770006084CF /* AVFoundation.framework */; };
 		43868A4B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
 		43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4C1928EB590047149D /* CoreGraphics.framework */; };
 		43868A4F1928EB590047149D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4E1928EB590047149D /* UIKit.framework */; };
@@ -24,6 +38,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		43619CC91929F74E006084CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43619CC41929F74E006084CF /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		43619CCB1929F74E006084CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43619CC41929F74E006084CF /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
+		};
+		43619CD41929F77F006084CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43619CC41929F74E006084CF /* libpd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
 		43868A6D1928EB590047149D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43868A3F1928EB580047149D /* Project object */;
@@ -34,6 +69,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		431E2905192A59BB00F8646B /* httpreceive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = httpreceive.c; sourceTree = "<group>"; };
+		431E2907192A59BB00F8646B /* httpreq.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = httpreq.c; sourceTree = "<group>"; };
+		431E290C192A59BB00F8646B /* tcpclient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tcpclient.c; sourceTree = "<group>"; };
+		431E290E192A59BB00F8646B /* tcpreceive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tcpreceive.c; sourceTree = "<group>"; };
+		431E2910192A59BB00F8646B /* tcpsend.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tcpsend.c; sourceTree = "<group>"; };
+		431E2912192A59BB00F8646B /* tcpserver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tcpserver.c; sourceTree = "<group>"; };
+		431E291A192A59BB00F8646B /* udpreceive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udpreceive.c; sourceTree = "<group>"; };
+		431E291E192A59BB00F8646B /* udpsend.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udpsend.c; sourceTree = "<group>"; };
+		431E2921192A59BB00F8646B /* udpsend~.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "udpsend~.h"; sourceTree = "<group>"; };
+		431E2930192A5AD000F8646B /* udpreceive~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpreceive~.c"; sourceTree = "<group>"; };
+		431E2932192A5E5600F8646B /* udpsend~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpsend~.c"; sourceTree = "<group>"; };
+		43619CC41929F74E006084CF /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
+		43619CCE1929F769006084CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		43619CD01929F76D006084CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		43619CD21929F770006084CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		43868A471928EB590047149D /* NetsendPD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetsendPD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43868A4A1928EB590047149D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43868A4C1928EB590047149D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */,
+				43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */,
+				43619CCD1929F764006084CF /* libpd-ios.a in Frameworks */,
 				43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */,
 				43868A4F1928EB590047149D /* UIKit.framework in Frameworks */,
 				43868A4B1928EB590047149D /* Foundation.framework in Frameworks */,
@@ -79,11 +132,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431E28FF192A598300F8646B /* udp sources */ = {
+			isa = PBXGroup;
+			children = (
+				431E2905192A59BB00F8646B /* httpreceive.c */,
+				431E2907192A59BB00F8646B /* httpreq.c */,
+				431E290C192A59BB00F8646B /* tcpclient.c */,
+				431E290E192A59BB00F8646B /* tcpreceive.c */,
+				431E2910192A59BB00F8646B /* tcpsend.c */,
+				431E2912192A59BB00F8646B /* tcpserver.c */,
+				431E291A192A59BB00F8646B /* udpreceive.c */,
+				431E2932192A5E5600F8646B /* udpsend~.c */,
+				431E2930192A5AD000F8646B /* udpreceive~.c */,
+				431E291E192A59BB00F8646B /* udpsend.c */,
+				431E2921192A59BB00F8646B /* udpsend~.h */,
+			);
+			name = "udp sources";
+			sourceTree = "<group>";
+		};
+		431E2901192A598F00F8646B /* libpd */ = {
+			isa = PBXGroup;
+			children = (
+				43619CC41929F74E006084CF /* libpd.xcodeproj */,
+			);
+			name = libpd;
+			sourceTree = "<group>";
+		};
+		43619CC31929F581006084CF /* 3rd-party */ = {
+			isa = PBXGroup;
+			children = (
+				431E2901192A598F00F8646B /* libpd */,
+				431E28FF192A598300F8646B /* udp sources */,
+			);
+			name = "3rd-party";
+			sourceTree = "<group>";
+		};
+		43619CC51929F74E006084CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43619CCA1929F74E006084CF /* libpd-ios.a */,
+				43619CCC1929F74E006084CF /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		43868A3E1928EB580047149D = {
 			isa = PBXGroup;
 			children = (
 				43868A501928EB590047149D /* NetsendPD */,
 				43868A6F1928EB590047149D /* NetsendPDTests */,
+				43619CC31929F581006084CF /* 3rd-party */,
 				43868A491928EB590047149D /* Frameworks */,
 				43868A481928EB590047149D /* Products */,
 			);
@@ -101,6 +199,9 @@
 		43868A491928EB590047149D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43619CD21929F770006084CF /* AVFoundation.framework */,
+				43619CD01929F76D006084CF /* AudioUnit.framework */,
+				43619CCE1929F769006084CF /* AudioToolbox.framework */,
 				43868A4A1928EB590047149D /* Foundation.framework */,
 				43868A4C1928EB590047149D /* CoreGraphics.framework */,
 				43868A4E1928EB590047149D /* UIKit.framework */,
@@ -166,6 +267,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				43619CD51929F77F006084CF /* PBXTargetDependency */,
 			);
 			name = NetsendPD;
 			productName = NetsendPD;
@@ -216,6 +318,12 @@
 			mainGroup = 43868A3E1928EB580047149D;
 			productRefGroup = 43868A481928EB590047149D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 43619CC51929F74E006084CF /* Products */;
+					ProjectRef = 43619CC41929F74E006084CF /* libpd.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				43868A461928EB590047149D /* NetsendPD */,
@@ -223,6 +331,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		43619CCA1929F74E006084CF /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = 43619CC91929F74E006084CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		43619CCC1929F74E006084CF /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = 43619CCB1929F74E006084CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43868A451928EB590047149D /* Resources */ = {
@@ -250,6 +375,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431E2922192A59D100F8646B /* httpreceive.c in Sources */,
+				431E2923192A59D100F8646B /* httpreq.c in Sources */,
+				431E2933192A5E5600F8646B /* udpsend~.c in Sources */,
+				431E2924192A59D100F8646B /* tcpclient.c in Sources */,
+				431E2925192A59D100F8646B /* tcpreceive.c in Sources */,
+				431E2931192A5AD000F8646B /* udpreceive~.c in Sources */,
+				431E2926192A59D100F8646B /* tcpsend.c in Sources */,
+				431E2927192A59D100F8646B /* tcpserver.c in Sources */,
+				431E2928192A59D100F8646B /* udpreceive.c in Sources */,
+				431E292A192A59D100F8646B /* udpsend.c in Sources */,
+				431E292C192A59D100F8646B /* udpsend~.h in Sources */,
 				43868A611928EB590047149D /* BRViewController.m in Sources */,
 				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
 				43868A571928EB590047149D /* main.m in Sources */,
@@ -267,6 +403,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		43619CD51929F77F006084CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libpd-ios";
+			targetProxy = 43619CD41929F77F006084CF /* PBXContainerItemProxy */;
+		};
 		43868A6E1928EB590047149D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 43868A461928EB590047149D /* NetsendPD */;
@@ -377,10 +518,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,10 +534,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -457,6 +604,7 @@
 				43868A7B1928EB590047149D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43868A7C1928EB590047149D /* Build configuration list for PBXNativeTarget "NetsendPDTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +613,7 @@
 				43868A7E1928EB590047149D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
