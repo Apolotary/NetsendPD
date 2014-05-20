@@ -8,8 +8,9 @@
 
 #import "BRAppDelegate.h"
 #import "PdAudioController.h"
+#import "PdBase.h"
 
-@interface BRAppDelegate ()
+@interface BRAppDelegate () <PdReceiverDelegate>
 {
     PdAudioController *pdAudioController;
 }
@@ -21,6 +22,11 @@
 extern void udpsend_tilde_setup(void);
 extern void udpreceive_tilde_setup(void);
 
+- (void)receivePrint:(NSString *)message
+{
+    NSLog(@"Pd print: %@", message);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -30,9 +36,17 @@ extern void udpreceive_tilde_setup(void);
                                           inputEnabled:YES
                                          mixingEnabled:NO];
     
+
+    
     udpreceive_tilde_setup();
     udpsend_tilde_setup();
     
+    NSString *filePath = [[NSBundle mainBundle] bundlePath];
+    
+    [PdBase setDelegate:self];
+    [PdBase openFile:@"receive_pd.pd" path:filePath];
+    [PdBase computeAudio:YES];
+    [pdAudioController setActive:YES];
     
     return YES;
 }

@@ -1,0 +1,72 @@
+#N canvas 478 245 736 491 10;
+#X obj 76 7 print udpreceive~;
+#X symbolatom -269 94 10 0 0 0 - - -;
+#X floatatom -235 28 5 0 0 0 - - -;
+#X floatatom -200 7 7 0 0 0 - - -;
+#X floatatom -166 72 9 0 0 0 - - -;
+#X obj -269 53 prepend set;
+#X text -299 27 channels:;
+#X text -315 93 format:;
+#X text -215 71 bitrate:;
+#X text -264 6 framesize:;
+#X floatatom -131 29 9 0 0 0 - - -;
+#X floatatom -97 7 9 0 0 0 - - -;
+#X floatatom -62 50 5 0 0 0 - - -;
+#X floatatom -28 29 5 0 0 0 - - -;
+#X text -188 28 overflow:;
+#X text -157 6 underflow:;
+#X text -123 49 queuesize:;
+#X text -76 28 average:;
+#X floatatom -236 -91 3 0 0 0 - - -;
+#X floatatom -210 -85 3 0 0 0 - - -;
+#X floatatom -190 -91 3 0 0 0 - - -;
+#X floatatom -167 -91 3 0 0 0 - - -;
+#X floatatom -143 -91 5 0 0 0 - - -;
+#X obj -236 -117 unpack 0 0 0 0 0;
+#X text -273 -92 from:;
+#X floatatom 7 72 9 0 0 0 - - -;
+#X text -45 71 packets:;
+#X text -98 -118 To communicate \, a [udpreceive~] and [udpsend~] pair
+must have the same number of channels and the same blocksize. Also
+[udpsend~] must [connect( to the port on which [udpreceive~] is listening.
+;
+#X text -225 -140 receives 2 channels on port 8008 Same blocksize as
+udpsend~;
+#X obj -269 -30 route format channels framesize bitrate overflow underflow
+queuesize average packets tag_errors;
+#X floatatom 41 50 9 0 0 0 - - -;
+#X text -25 49 tag errors:;
+#X obj -302 -79 env~;
+#X floatatom -302 -56 9 0 0 0 - - -;
+#X text -242 -67 The rightmost signal outlet outputs 1 if the stream
+is valid \, else 0;
+#X text -26 -183 Arguments: port \, channels \, blocksize \, multicast_address.
+Blocksize should match [udpsend~]. multicast_address is optional. Arguments
+must be in that order.;
+#X obj -365 -139 udpreceive~ 1349 2 512;
+#X obj -314 134 print;
+#X obj -364 -108 dac~;
+#X connect 5 0 1 0;
+#X connect 23 0 18 0;
+#X connect 23 1 19 0;
+#X connect 23 2 20 0;
+#X connect 23 3 21 0;
+#X connect 23 4 22 0;
+#X connect 29 0 5 0;
+#X connect 29 1 2 0;
+#X connect 29 2 3 0;
+#X connect 29 3 4 0;
+#X connect 29 4 10 0;
+#X connect 29 5 11 0;
+#X connect 29 6 12 0;
+#X connect 29 7 13 0;
+#X connect 29 8 25 0;
+#X connect 29 9 30 0;
+#X connect 29 10 0 0;
+#X connect 32 0 33 0;
+#X connect 36 0 38 0;
+#X connect 36 1 38 1;
+#X connect 36 2 32 0;
+#X connect 36 3 29 0;
+#X connect 36 4 23 0;
+#X connect 36 4 37 0;
