@@ -1,10 +1,13 @@
 PODS:
+  - CocoaAsyncSocket (7.3.5)
   - libpd (0.7.0)
 
 DEPENDENCIES:
+  - CocoaAsyncSocket (~> 7.3)
   - libpd (~> 0.7)
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
   libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f
 
 COCOAPODS: 0.32.1

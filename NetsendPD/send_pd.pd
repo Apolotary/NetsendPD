@@ -1,4 +1,4 @@
-#N canvas 704 491 907 509 10;
+#N canvas 608 323 907 509 10;
 #X obj -178 225 osc~ 440;
 #X msg -398 60 disconnect;
 #X msg -353 105 format float;
@@ -35,7 +35,7 @@ per sample);
 #X text 70 430 dsp vector size:;
 #X msg -258 200 channels \$1;
 #X obj -412 185 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
--1 0;
+-1 2;
 #X obj -178 297 udpsend~ 2 512;
 #X text -88 296 sends 2 dsp-channels using 512-sample blocks;
 #X text 68 448 (blocksize must be a multiple of this);
@@ -63,7 +63,7 @@ if nothing is receiving.;
 #X text -456 313 [udpreceive~] and [udpsend~];
 #X floatatom -412 216 5 0 0 0 - - -;
 #X obj -288 172 tgl 15 0 empty empty toggle_connection 17 7 0 10 -4034
--1 -1 0 1;
+-1 -1 1 1;
 #N canvas 27 271 657 334 multicast 0;
 #X msg 91 87 multicast_interface 192.168.0.88;
 #X msg 66 62 multicast_interface eth1;
@@ -101,6 +101,7 @@ if nothing is receiving.;
 #X text -455 328 Author: Martin Peach 2010/10/28;
 #X msg -440 18 connect localhost 1349;
 #X msg -419 39 connect 255.255.255.255 1349;
+#X msg 96 64 connect 10.0.1.49 1349;
 #X connect 0 0 23 0;
 #X connect 1 0 31 0;
 #X connect 2 0 31 0;
@@ -131,3 +132,4 @@ if nothing is receiving.;
 #X connect 49 0 31 0;
 #X connect 51 0 31 0;
 #X connect 52 0 31 0;
+#X connect 53 0 31 0;
