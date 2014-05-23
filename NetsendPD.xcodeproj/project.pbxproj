@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */ = {isa = PBXBuildFile; fileRef = 0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */; };
-		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; };
-		431E2923192A59D100F8646B /* httpreq.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2907192A59BB00F8646B /* httpreq.c */; };
-		431E2924192A59D100F8646B /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290C192A59BB00F8646B /* tcpclient.c */; };
-		431E2925192A59D100F8646B /* tcpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290E192A59BB00F8646B /* tcpreceive.c */; };
-		431E2926192A59D100F8646B /* tcpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2910192A59BB00F8646B /* tcpsend.c */; };
-		431E2927192A59D100F8646B /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2912192A59BB00F8646B /* tcpserver.c */; };
-		431E2928192A59D100F8646B /* udpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291A192A59BB00F8646B /* udpreceive.c */; };
-		431E292A192A59D100F8646B /* udpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291E192A59BB00F8646B /* udpsend.c */; };
-		431E292C192A59D100F8646B /* udpsend~.h in Sources */ = {isa = PBXBuildFile; fileRef = 431E2921192A59BB00F8646B /* udpsend~.h */; };
-		431E2931192A5AD000F8646B /* udpreceive~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2930192A5AD000F8646B /* udpreceive~.c */; };
-		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; };
+		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2923192A59D100F8646B /* httpreq.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2907192A59BB00F8646B /* httpreq.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2924192A59D100F8646B /* tcpclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290C192A59BB00F8646B /* tcpclient.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2925192A59D100F8646B /* tcpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E290E192A59BB00F8646B /* tcpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2926192A59D100F8646B /* tcpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2910192A59BB00F8646B /* tcpsend.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2927192A59D100F8646B /* tcpserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2912192A59BB00F8646B /* tcpserver.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2928192A59D100F8646B /* udpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291A192A59BB00F8646B /* udpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E292A192A59D100F8646B /* udpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291E192A59BB00F8646B /* udpsend.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2931192A5AD000F8646B /* udpreceive~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2930192A5AD000F8646B /* udpreceive~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
+		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCE1929F769006084CF /* AudioToolbox.framework */; };
 		43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CD21929F770006084CF /* AVFoundation.framework */; };
+		43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43850362192EC81C00FFE2C3 /* BRPdManager.m */; };
 		43868A4B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
 		43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4C1928EB590047149D /* CoreGraphics.framework */; };
 		43868A4F1928EB590047149D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4E1928EB590047149D /* UIKit.framework */; };
@@ -66,6 +66,8 @@
 		43619CCE1929F769006084CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43619CD01929F76D006084CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		43619CD21929F770006084CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		43850361192EC81C00FFE2C3 /* BRPdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPdManager.h; sourceTree = "<group>"; };
+		43850362192EC81C00FFE2C3 /* BRPdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPdManager.m; sourceTree = "<group>"; };
 		43868A471928EB590047149D /* NetsendPD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetsendPD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43868A4A1928EB590047149D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43868A4C1928EB590047149D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,6 +144,24 @@
 			name = "3rd-party";
 			sourceTree = "<group>";
 		};
+		4385035F192EC7F800FFE2C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43850361192EC81C00FFE2C3 /* BRPdManager.h */,
+				43850362192EC81C00FFE2C3 /* BRPdManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		43850360192EC7FE00FFE2C3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				43868A5F1928EB590047149D /* BRViewController.h */,
+				43868A601928EB590047149D /* BRViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		43868A3E1928EB580047149D = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +201,11 @@
 		43868A501928EB590047149D /* NetsendPD */ = {
 			isa = PBXGroup;
 			children = (
+				43850360192EC7FE00FFE2C3 /* ViewControllers */,
+				4385035F192EC7F800FFE2C3 /* Model */,
 				43868A591928EB590047149D /* BRAppDelegate.h */,
 				43868A5A1928EB590047149D /* BRAppDelegate.m */,
 				43868A5C1928EB590047149D /* Main.storyboard */,
-				43868A5F1928EB590047149D /* BRViewController.h */,
-				43868A601928EB590047149D /* BRViewController.m */,
 				43868A621928EB590047149D /* Images.xcassets */,
 				43868A511928EB590047149D /* Supporting Files */,
 			);
@@ -368,9 +388,9 @@
 				431E2927192A59D100F8646B /* tcpserver.c in Sources */,
 				431E2928192A59D100F8646B /* udpreceive.c in Sources */,
 				431E292A192A59D100F8646B /* udpsend.c in Sources */,
-				431E292C192A59D100F8646B /* udpsend~.h in Sources */,
 				43868A611928EB590047149D /* BRViewController.m in Sources */,
 				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
+				43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */,
 				43868A571928EB590047149D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

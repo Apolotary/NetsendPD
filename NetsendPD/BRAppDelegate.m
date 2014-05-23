@@ -7,46 +7,26 @@
 //
 
 #import "BRAppDelegate.h"
-#import "PdAudioController.h"
-#import "PdBase.h"
 
-@interface BRAppDelegate () <PdReceiverDelegate>
-{
-    PdAudioController *pdAudioController;
-}
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+
+#import "BRPdManager.h"
+
+@interface BRAppDelegate ()
+
+- (void) setupLogger;
 
 @end
 
 @implementation BRAppDelegate
 
-extern void udpsend_tilde_setup(void);
-extern void udpreceive_tilde_setup(void);
-
-- (void)receivePrint:(NSString *)message
-{
-    NSLog(@"Pd print: %@", message);
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    pdAudioController = [[PdAudioController alloc] init];
-    [pdAudioController configurePlaybackWithSampleRate:44100
-                                        numberChannels:2
-                                          inputEnabled:YES
-                                         mixingEnabled:NO];
-    
-
-    
-    udpreceive_tilde_setup();
-    udpsend_tilde_setup();
-    
     NSString *filePath = [[NSBundle mainBundle] bundlePath];
     
-    [PdBase setDelegate:self];
-    [PdBase openFile:@"receive_pd.pd" path:filePath];
-    [PdBase computeAudio:YES];
-    [pdAudioController setActive:YES];
+    BRPdManager *pdManager = [BRPdManager sharedInstance];
+    [pdManager openPatch:@"receive_pd.pd" withPath:filePath];
     
     return YES;
 }
@@ -76,6 +56,14 @@ extern void udpreceive_tilde_setup(void);
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - DDLog setup
+
+- (void) setupLogger
+{
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
 
 @end
