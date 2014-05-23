@@ -13,8 +13,6 @@
 extern void udpsend_tilde_setup(void);
 extern void udpreceive_tilde_setup(void);
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 @interface BRPdManager () <PdReceiverDelegate>
 {
     PdAudioController *_pdAudioController;
