@@ -23,6 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self setupLogger];
+    
     NSString *filePath = [[NSBundle mainBundle] bundlePath];
     
     BRPdManager *pdManager = [BRPdManager sharedInstance];

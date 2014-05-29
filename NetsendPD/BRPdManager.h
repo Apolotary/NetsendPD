@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Bektur Ryskeldiev. All rights reserved.
 //
 
+// Manages all Pd objects within an app
+
 #import <Foundation/Foundation.h>
 
 @interface BRPdManager : NSObject

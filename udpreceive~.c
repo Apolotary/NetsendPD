@@ -394,6 +394,8 @@ static int udpreceive_tilde_createsocket(t_udpreceive_tilde* x, char *address, i
 /* Block is a set of sample vectors inside a frame, one vector per channel */
 #define BLOCKOFFSET (x->x_blockssincerecv * x->x_vecsize * x->x_frames[x->x_frameout].tag.channels)
 
+#pragma mark - Sound processing magic here
+
 static t_int *udpreceive_tilde_perform(t_int *w)
 {
     t_udpreceive_tilde      *x = (t_udpreceive_tilde*) (w[1]);

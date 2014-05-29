@@ -20,6 +20,7 @@
 		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCE1929F769006084CF /* AudioToolbox.framework */; };
 		43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CD21929F770006084CF /* AVFoundation.framework */; };
+		4374270D1935F6DF001AC567 /* BRNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 4374270C1935F6DF001AC567 /* BRNetwork.m */; };
 		43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43850362192EC81C00FFE2C3 /* BRPdManager.m */; };
 		43868A4B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
 		43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4C1928EB590047149D /* CoreGraphics.framework */; };
@@ -66,6 +67,8 @@
 		43619CCE1929F769006084CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43619CD01929F76D006084CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		43619CD21929F770006084CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4374270B1935F6DF001AC567 /* BRNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRNetwork.h; sourceTree = "<group>"; };
+		4374270C1935F6DF001AC567 /* BRNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRNetwork.m; sourceTree = "<group>"; };
 		43850361192EC81C00FFE2C3 /* BRPdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPdManager.h; sourceTree = "<group>"; };
 		43850362192EC81C00FFE2C3 /* BRPdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPdManager.m; sourceTree = "<group>"; };
 		43868A471928EB590047149D /* NetsendPD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetsendPD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +152,8 @@
 			children = (
 				43850361192EC81C00FFE2C3 /* BRPdManager.h */,
 				43850362192EC81C00FFE2C3 /* BRPdManager.m */,
+				4374270B1935F6DF001AC567 /* BRNetwork.h */,
+				4374270C1935F6DF001AC567 /* BRNetwork.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				431E2922192A59D100F8646B /* httpreceive.c in Sources */,
+				4374270D1935F6DF001AC567 /* BRNetwork.m in Sources */,
 				431E2923192A59D100F8646B /* httpreq.c in Sources */,
 				431E2933192A5E5600F8646B /* udpsend~.c in Sources */,
 				431E2924192A59D100F8646B /* tcpclient.c in Sources */,

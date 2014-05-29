@@ -557,6 +557,8 @@ static void udpsend_tilde_set_multicast_interface (t_udpsend_tilde *x, t_symbol 
 #endif // _WIN32
 }
 
+#pragma mark - Audio buffer magic happens over here
+
 static t_int *udpsend_tilde_perform(t_int *w)
 {
     t_udpsend_tilde* x = (t_udpsend_tilde*) (w[1]);
