@@ -13,6 +13,8 @@
 
 #import "BRPdManager.h"
 
+#import "BRNetsendConstants.h"
+
 @interface BRAppDelegate ()
 
 - (void) setupLogger;
@@ -25,10 +27,9 @@
 {
     [self setupLogger];
     
-    NSString *filePath = [[NSBundle mainBundle] bundlePath];
-    
+    // initializing pure data
     BRPdManager *pdManager = [BRPdManager sharedInstance];
-    [pdManager openPatch:@"receive_pd.pd" withPath:filePath];
+    [pdManager openPatch:@"receive_pd.pd" withPath:[[NSBundle mainBundle] bundlePath]];
     
     return YES;
 }

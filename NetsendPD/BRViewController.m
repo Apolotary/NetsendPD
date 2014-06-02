@@ -8,7 +8,13 @@
 
 #import "BRViewController.h"
 
+#import "BRUdpReceiveTilde.h"
+#import "BRNetsendConstants.h"
+
 @interface BRViewController ()
+{
+    BRUdpReceiveTilde *_udpReceive;
+}
 
 @end
 
@@ -17,7 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+//    _udpReceive = [[BRUdpReceiveTilde alloc] init];
+//    [_udpReceive connectToPort:kDefaultUdpPortNumber];
 }
 
 - (void)didReceiveMemoryWarning

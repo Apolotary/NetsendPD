@@ -549,6 +549,7 @@ bail:
 
 static void udpreceive_tilde_dsp(t_udpreceive_tilde *x, t_signal **sp)
 {
+    post("udpreceive~: dsp and stuff");
     int i;
 
     x->x_myvec[0] = (t_int*)x;

@@ -22,6 +22,9 @@
 
 void pd_init(void);
 
+void sys_findprogdir(char *progname);
+int sys_startgui(const char *guipath);
+
 static t_atom *argv = NULL, *curr;
 static int argm = 0, argc;
 
@@ -54,10 +57,11 @@ int libpd_init(void) {
   sys_nmidiout = 0;
   sys_time = 0;
   pd_init();
+    sys_findprogdir("");                   /* set sys_progname, guipath */
   libpdreceive_setup();
+    sys_startgui(sys_libdir->s_name);   /* start the gui */
   sys_set_audio_api(API_DUMMY);
   sys_searchpath = NULL;
-	
 	return 0;
 }
 

@@ -50,7 +50,6 @@ extern void udpreceive_tilde_setup(void);
                                               inputEnabled:YES
                                              mixingEnabled:NO];
         udpreceive_tilde_setup();
-        udpsend_tilde_setup();
     }
     return self;
 }

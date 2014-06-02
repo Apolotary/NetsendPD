@@ -1,4 +1,4 @@
-#N canvas 478 245 736 491 10;
+#N canvas 236 349 736 491 10;
 #X obj 76 7 print udpreceive~;
 #X symbolatom -269 94 10 0 0 0 - - -;
 #X floatatom -235 28 5 0 0 0 - - -;
@@ -43,9 +43,9 @@ is valid \, else 0;
 #X text -26 -183 Arguments: port \, channels \, blocksize \, multicast_address.
 Blocksize should match [udpsend~]. multicast_address is optional. Arguments
 must be in that order.;
-#X obj -365 -139 udpreceive~ 1349 2 512;
 #X obj -314 134 print;
-#X obj -364 -108 dac~;
+#X obj -364 -108 dac~ 1 2;
+#X obj -365 -139 udpreceive~ 1349 2 512;
 #X connect 5 0 1 0;
 #X connect 23 0 18 0;
 #X connect 23 1 19 0;
@@ -64,9 +64,9 @@ must be in that order.;
 #X connect 29 9 30 0;
 #X connect 29 10 0 0;
 #X connect 32 0 33 0;
-#X connect 36 0 38 0;
-#X connect 36 1 38 1;
-#X connect 36 2 32 0;
-#X connect 36 3 29 0;
-#X connect 36 4 23 0;
-#X connect 36 4 37 0;
+#X connect 38 0 37 0;
+#X connect 38 1 37 1;
+#X connect 38 2 32 0;
+#X connect 38 3 29 0;
+#X connect 38 4 23 0;
+#X connect 38 4 36 0;

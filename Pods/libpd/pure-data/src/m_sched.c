@@ -425,6 +425,7 @@ void sched_tick(double next_sys_time)
     sys_time = next_sys_time;
     dsp_tick();
     sched_diddsp++;
+    sys_microsleep(0);
 }
 
 /*
