@@ -18,9 +18,32 @@
 		431E292A192A59D100F8646B /* udpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E291E192A59BB00F8646B /* udpsend.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		431E2931192A5AD000F8646B /* udpreceive~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2930192A5AD000F8646B /* udpreceive~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
-		4346D100193C5BEC002691A2 /* BRNetsendConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4346D0FF193C5BEC002691A2 /* BRNetsendConstants.m */; };
+		4335F3CB19825D0B00DA7D2B /* receive_pd_multi.pd in Resources */ = {isa = PBXBuildFile; fileRef = 4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */; };
+		433D68CD193D4AEE00D3C9A9 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CC193D4AEE00D3C9A9 /* metronome.wav */; };
+		433D68D2193D4CF000D3C9A9 /* ShyBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CE193D4CF000D3C9A9 /* ShyBass.wav */; };
+		433D68D3193D4CF000D3C9A9 /* ShyDrums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */; };
+		433D68D4193D4CF000D3C9A9 /* ShyGuitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */; };
+		433D68D5193D4CF000D3C9A9 /* ShyPiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */; };
 		43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCE1929F769006084CF /* AudioToolbox.framework */; };
 		43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CD21929F770006084CF /* AVFoundation.framework */; };
+		437123FD19968EBC00960D10 /* BRBonjourOSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 437123FC19968EBC00960D10 /* BRBonjourOSCClient.m */; };
+		4371242219968ECB00960D10 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240119968ECB00960D10 /* F53OSCBundle.m */; };
+		4371242319968ECB00960D10 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240319968ECB00960D10 /* F53OSCClient.m */; };
+		4371242419968ECB00960D10 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240619968ECB00960D10 /* F53OSCMessage.m */; };
+		4371242519968ECB00960D10 /* F53OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240819968ECB00960D10 /* F53OSCPacket.m */; };
+		4371242619968ECB00960D10 /* F53OSCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240A19968ECB00960D10 /* F53OSCParser.m */; };
+		4371242719968ECB00960D10 /* F53OSCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240D19968ECB00960D10 /* F53OSCServer.m */; };
+		4371242819968ECB00960D10 /* F53OSCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371240F19968ECB00960D10 /* F53OSCSocket.m */; };
+		4371242919968ECB00960D10 /* F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241119968ECB00960D10 /* F53OSCTimeTag.m */; };
+		4371242A19968ECB00960D10 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241319968ECB00960D10 /* GCDAsyncSocket.m */; };
+		4371242B19968ECB00960D10 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241519968ECB00960D10 /* GCDAsyncUdpSocket.m */; };
+		4371242C19968ECB00960D10 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4371241619968ECB00960D10 /* LICENSE.txt */; };
+		4371242D19968ECB00960D10 /* MetatoneNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241819968ECB00960D10 /* MetatoneNetworkManager.m */; };
+		4371242E19968ECB00960D10 /* NSData+F53OSCBlob.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241A19968ECB00960D10 /* NSData+F53OSCBlob.m */; };
+		4371242F19968ECB00960D10 /* NSDate+F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241C19968ECB00960D10 /* NSDate+F53OSCTimeTag.m */; };
+		4371243019968ECB00960D10 /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371241E19968ECB00960D10 /* NSNumber+F53OSCNumber.m */; };
+		4371243119968ECB00960D10 /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371242019968ECB00960D10 /* NSString+F53OSCString.m */; };
+		4371243219968ECB00960D10 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 4371242119968ECB00960D10 /* README.markdown */; };
 		43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43850362192EC81C00FFE2C3 /* BRPdManager.m */; };
 		43868A4B1928EB590047149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4A1928EB590047149D /* Foundation.framework */; };
 		43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4C1928EB590047149D /* CoreGraphics.framework */; };
@@ -36,7 +59,6 @@
 		43868A6C1928EB590047149D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43868A4E1928EB590047149D /* UIKit.framework */; };
 		43868A741928EB590047149D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43868A721928EB590047149D /* InfoPlist.strings */; };
 		43868A761928EB590047149D /* NetsendPDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43868A751928EB590047149D /* NetsendPDTests.m */; };
-		439B248D193806C700608415 /* BRUdpReceiveTilde.m in Sources */ = {isa = PBXBuildFile; fileRef = 439B248C193806C700608415 /* BRUdpReceiveTilde.m */; };
 		43A5B36E192B195F00933BB7 /* receive_pd.pd in Resources */ = {isa = PBXBuildFile; fileRef = 43A5B36D192B195F00933BB7 /* receive_pd.pd */; };
 		5966833DB97D4E1CBCA6561B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4551B22F3A6546F8B270B4F6 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -65,11 +87,52 @@
 		431E2921192A59BB00F8646B /* udpsend~.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "udpsend~.h"; sourceTree = "<group>"; };
 		431E2930192A5AD000F8646B /* udpreceive~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpreceive~.c"; sourceTree = "<group>"; };
 		431E2932192A5E5600F8646B /* udpsend~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpsend~.c"; sourceTree = "<group>"; };
-		4346D0FE193C5BEC002691A2 /* BRNetsendConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRNetsendConstants.h; sourceTree = "<group>"; };
-		4346D0FF193C5BEC002691A2 /* BRNetsendConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRNetsendConstants.m; sourceTree = "<group>"; };
+		4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = receive_pd_multi.pd; sourceTree = "<group>"; };
+		433D68CC193D4AEE00D3C9A9 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome.wav; sourceTree = "<group>"; };
+		433D68CE193D4CF000D3C9A9 /* ShyBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyBass.wav; sourceTree = "<group>"; };
+		433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyDrums.wav; sourceTree = "<group>"; };
+		433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyGuitar.wav; sourceTree = "<group>"; };
+		433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyPiano.wav; sourceTree = "<group>"; };
 		43619CCE1929F769006084CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43619CD01929F76D006084CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		43619CD21929F770006084CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		437123FB19968EBC00960D10 /* BRBonjourOSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBonjourOSCClient.h; sourceTree = "<group>"; };
+		437123FC19968EBC00960D10 /* BRBonjourOSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBonjourOSCClient.m; sourceTree = "<group>"; };
+		437123FF19968ECB00960D10 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
+		4371240019968ECB00960D10 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
+		4371240119968ECB00960D10 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
+		4371240219968ECB00960D10 /* F53OSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCClient.h; sourceTree = "<group>"; };
+		4371240319968ECB00960D10 /* F53OSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCClient.m; sourceTree = "<group>"; };
+		4371240419968ECB00960D10 /* F53OSCFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCFoundationAdditions.h; sourceTree = "<group>"; };
+		4371240519968ECB00960D10 /* F53OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCMessage.h; sourceTree = "<group>"; };
+		4371240619968ECB00960D10 /* F53OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCMessage.m; sourceTree = "<group>"; };
+		4371240719968ECB00960D10 /* F53OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCPacket.h; sourceTree = "<group>"; };
+		4371240819968ECB00960D10 /* F53OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCPacket.m; sourceTree = "<group>"; };
+		4371240919968ECB00960D10 /* F53OSCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCParser.h; sourceTree = "<group>"; };
+		4371240A19968ECB00960D10 /* F53OSCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCParser.m; sourceTree = "<group>"; };
+		4371240B19968ECB00960D10 /* F53OSCProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCProtocols.h; sourceTree = "<group>"; };
+		4371240C19968ECB00960D10 /* F53OSCServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCServer.h; sourceTree = "<group>"; };
+		4371240D19968ECB00960D10 /* F53OSCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCServer.m; sourceTree = "<group>"; };
+		4371240E19968ECB00960D10 /* F53OSCSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCSocket.h; sourceTree = "<group>"; };
+		4371240F19968ECB00960D10 /* F53OSCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCSocket.m; sourceTree = "<group>"; };
+		4371241019968ECB00960D10 /* F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCTimeTag.h; sourceTree = "<group>"; };
+		4371241119968ECB00960D10 /* F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCTimeTag.m; sourceTree = "<group>"; };
+		4371241219968ECB00960D10 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		4371241319968ECB00960D10 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		4371241419968ECB00960D10 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		4371241519968ECB00960D10 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		4371241619968ECB00960D10 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		4371241719968ECB00960D10 /* MetatoneNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetatoneNetworkManager.h; sourceTree = "<group>"; };
+		4371241819968ECB00960D10 /* MetatoneNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetatoneNetworkManager.m; sourceTree = "<group>"; };
+		4371241919968ECB00960D10 /* NSData+F53OSCBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+F53OSCBlob.h"; sourceTree = "<group>"; };
+		4371241A19968ECB00960D10 /* NSData+F53OSCBlob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+F53OSCBlob.m"; sourceTree = "<group>"; };
+		4371241B19968ECB00960D10 /* NSDate+F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+F53OSCTimeTag.h"; sourceTree = "<group>"; };
+		4371241C19968ECB00960D10 /* NSDate+F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+F53OSCTimeTag.m"; sourceTree = "<group>"; };
+		4371241D19968ECB00960D10 /* NSNumber+F53OSCNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+F53OSCNumber.h"; sourceTree = "<group>"; };
+		4371241E19968ECB00960D10 /* NSNumber+F53OSCNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+F53OSCNumber.m"; sourceTree = "<group>"; };
+		4371241F19968ECB00960D10 /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+F53OSCString.h"; sourceTree = "<group>"; };
+		4371242019968ECB00960D10 /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+F53OSCString.m"; sourceTree = "<group>"; };
+		4371242119968ECB00960D10 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		43850361192EC81C00FFE2C3 /* BRPdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPdManager.h; sourceTree = "<group>"; };
 		43850362192EC81C00FFE2C3 /* BRPdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPdManager.m; sourceTree = "<group>"; };
 		43868A471928EB590047149D /* NetsendPD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetsendPD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +154,6 @@
 		43868A711928EB590047149D /* NetsendPDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetsendPDTests-Info.plist"; sourceTree = "<group>"; };
 		43868A731928EB590047149D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43868A751928EB590047149D /* NetsendPDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetsendPDTests.m; sourceTree = "<group>"; };
-		439B248B193806C700608415 /* BRUdpReceiveTilde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRUdpReceiveTilde.h; sourceTree = "<group>"; };
-		439B248C193806C700608415 /* BRUdpReceiveTilde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRUdpReceiveTilde.m; sourceTree = "<group>"; };
 		43A5B36D192B195F00933BB7 /* receive_pd.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = receive_pd.pd; sourceTree = "<group>"; };
 		4551B22F3A6546F8B270B4F6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,9 +206,52 @@
 		43619CC31929F581006084CF /* 3rd-party */ = {
 			isa = PBXGroup;
 			children = (
+				437123FE19968ECB00960D10 /* MetatoneOSC */,
 				431E28FF192A598300F8646B /* udp sources */,
 			);
 			name = "3rd-party";
+			sourceTree = "<group>";
+		};
+		437123FE19968ECB00960D10 /* MetatoneOSC */ = {
+			isa = PBXGroup;
+			children = (
+				437123FF19968ECB00960D10 /* F53OSC.h */,
+				4371240019968ECB00960D10 /* F53OSCBundle.h */,
+				4371240119968ECB00960D10 /* F53OSCBundle.m */,
+				4371240219968ECB00960D10 /* F53OSCClient.h */,
+				4371240319968ECB00960D10 /* F53OSCClient.m */,
+				4371240419968ECB00960D10 /* F53OSCFoundationAdditions.h */,
+				4371240519968ECB00960D10 /* F53OSCMessage.h */,
+				4371240619968ECB00960D10 /* F53OSCMessage.m */,
+				4371240719968ECB00960D10 /* F53OSCPacket.h */,
+				4371240819968ECB00960D10 /* F53OSCPacket.m */,
+				4371240919968ECB00960D10 /* F53OSCParser.h */,
+				4371240A19968ECB00960D10 /* F53OSCParser.m */,
+				4371240B19968ECB00960D10 /* F53OSCProtocols.h */,
+				4371240C19968ECB00960D10 /* F53OSCServer.h */,
+				4371240D19968ECB00960D10 /* F53OSCServer.m */,
+				4371240E19968ECB00960D10 /* F53OSCSocket.h */,
+				4371240F19968ECB00960D10 /* F53OSCSocket.m */,
+				4371241019968ECB00960D10 /* F53OSCTimeTag.h */,
+				4371241119968ECB00960D10 /* F53OSCTimeTag.m */,
+				4371241219968ECB00960D10 /* GCDAsyncSocket.h */,
+				4371241319968ECB00960D10 /* GCDAsyncSocket.m */,
+				4371241419968ECB00960D10 /* GCDAsyncUdpSocket.h */,
+				4371241519968ECB00960D10 /* GCDAsyncUdpSocket.m */,
+				4371241619968ECB00960D10 /* LICENSE.txt */,
+				4371241719968ECB00960D10 /* MetatoneNetworkManager.h */,
+				4371241819968ECB00960D10 /* MetatoneNetworkManager.m */,
+				4371241919968ECB00960D10 /* NSData+F53OSCBlob.h */,
+				4371241A19968ECB00960D10 /* NSData+F53OSCBlob.m */,
+				4371241B19968ECB00960D10 /* NSDate+F53OSCTimeTag.h */,
+				4371241C19968ECB00960D10 /* NSDate+F53OSCTimeTag.m */,
+				4371241D19968ECB00960D10 /* NSNumber+F53OSCNumber.h */,
+				4371241E19968ECB00960D10 /* NSNumber+F53OSCNumber.m */,
+				4371241F19968ECB00960D10 /* NSString+F53OSCString.h */,
+				4371242019968ECB00960D10 /* NSString+F53OSCString.m */,
+				4371242119968ECB00960D10 /* README.markdown */,
+			);
+			path = MetatoneOSC;
 			sourceTree = "<group>";
 		};
 		4385035F192EC7F800FFE2C3 /* Model */ = {
@@ -155,10 +259,8 @@
 			children = (
 				43850361192EC81C00FFE2C3 /* BRPdManager.h */,
 				43850362192EC81C00FFE2C3 /* BRPdManager.m */,
-				439B248B193806C700608415 /* BRUdpReceiveTilde.h */,
-				439B248C193806C700608415 /* BRUdpReceiveTilde.m */,
-				4346D0FE193C5BEC002691A2 /* BRNetsendConstants.h */,
-				4346D0FF193C5BEC002691A2 /* BRNetsendConstants.m */,
+				437123FB19968EBC00960D10 /* BRBonjourOSCClient.h */,
+				437123FC19968EBC00960D10 /* BRBonjourOSCClient.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -225,6 +327,12 @@
 		43868A511928EB590047149D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */,
+				433D68CE193D4CF000D3C9A9 /* ShyBass.wav */,
+				433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */,
+				433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */,
+				433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */,
+				433D68CC193D4AEE00D3C9A9 /* metronome.wav */,
 				0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */,
 				43A5B36D192B195F00933BB7 /* receive_pd.pd */,
 				43868A521928EB590047149D /* NetsendPD-Info.plist */,
@@ -332,11 +440,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4371242C19968ECB00960D10 /* LICENSE.txt in Resources */,
 				43868A631928EB590047149D /* Images.xcassets in Resources */,
+				433D68CD193D4AEE00D3C9A9 /* metronome.wav in Resources */,
+				433D68D2193D4CF000D3C9A9 /* ShyBass.wav in Resources */,
+				4335F3CB19825D0B00DA7D2B /* receive_pd_multi.pd in Resources */,
 				43A5B36E192B195F00933BB7 /* receive_pd.pd in Resources */,
+				4371243219968ECB00960D10 /* README.markdown in Resources */,
 				43868A551928EB590047149D /* InfoPlist.strings in Resources */,
 				43868A5E1928EB590047149D /* Main.storyboard in Resources */,
 				0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */,
+				433D68D4193D4CF000D3C9A9 /* ShyGuitar.wav in Resources */,
+				433D68D3193D4CF000D3C9A9 /* ShyDrums.wav in Resources */,
+				433D68D5193D4CF000D3C9A9 /* ShyPiano.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,21 +504,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4371243019968ECB00960D10 /* NSNumber+F53OSCNumber.m in Sources */,
+				4371242A19968ECB00960D10 /* GCDAsyncSocket.m in Sources */,
 				431E2922192A59D100F8646B /* httpreceive.c in Sources */,
-				4346D100193C5BEC002691A2 /* BRNetsendConstants.m in Sources */,
 				431E2923192A59D100F8646B /* httpreq.c in Sources */,
-				439B248D193806C700608415 /* BRUdpReceiveTilde.m in Sources */,
 				431E2933192A5E5600F8646B /* udpsend~.c in Sources */,
 				431E2924192A59D100F8646B /* tcpclient.c in Sources */,
 				431E2925192A59D100F8646B /* tcpreceive.c in Sources */,
+				4371242B19968ECB00960D10 /* GCDAsyncUdpSocket.m in Sources */,
 				431E2931192A5AD000F8646B /* udpreceive~.c in Sources */,
+				4371242219968ECB00960D10 /* F53OSCBundle.m in Sources */,
 				431E2926192A59D100F8646B /* tcpsend.c in Sources */,
 				431E2927192A59D100F8646B /* tcpserver.c in Sources */,
+				4371242619968ECB00960D10 /* F53OSCParser.m in Sources */,
 				431E2928192A59D100F8646B /* udpreceive.c in Sources */,
+				437123FD19968EBC00960D10 /* BRBonjourOSCClient.m in Sources */,
+				4371242519968ECB00960D10 /* F53OSCPacket.m in Sources */,
+				4371242319968ECB00960D10 /* F53OSCClient.m in Sources */,
 				431E292A192A59D100F8646B /* udpsend.c in Sources */,
 				43868A611928EB590047149D /* BRViewController.m in Sources */,
+				4371242E19968ECB00960D10 /* NSData+F53OSCBlob.m in Sources */,
+				4371242919968ECB00960D10 /* F53OSCTimeTag.m in Sources */,
+				4371242D19968ECB00960D10 /* MetatoneNetworkManager.m in Sources */,
+				4371242F19968ECB00960D10 /* NSDate+F53OSCTimeTag.m in Sources */,
 				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
+				4371242819968ECB00960D10 /* F53OSCSocket.m in Sources */,
+				4371243119968ECB00960D10 /* NSString+F53OSCString.m in Sources */,
 				43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */,
+				4371242419968ECB00960D10 /* F53OSCMessage.m in Sources */,
+				4371242719968ECB00960D10 /* F53OSCServer.m in Sources */,
 				43868A571928EB590047149D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,8 +13,6 @@
 
 #import "BRPdManager.h"
 
-#import "BRNetsendConstants.h"
-
 @interface BRAppDelegate ()
 
 - (void) setupLogger;
