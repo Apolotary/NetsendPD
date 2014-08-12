@@ -39,6 +39,11 @@
 
 - (void) advertiseBonjourServiceWithName: (NSString *) serviceName
 {
+    if (_service)
+    {
+        [_service stop];
+    }
+    
     // Initialize GCDAsyncSocket
     self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     
