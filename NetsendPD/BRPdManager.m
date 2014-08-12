@@ -68,6 +68,18 @@ extern void udpreceive_tilde_setup(void);
     [_pdAudioController setActive:isActive];
 }
 
+#pragma mark - Sending methods
+
+- (void) sendBufferSize: (int) buffer
+{
+    [PdBase sendMessage:[NSString stringWithFormat:@"%i", buffer] withArguments:nil toReceiver:@"udpreceive_buffer"];
+}
+
+- (void) sendPortNumber: (int) portNumber
+{
+    [PdBase sendMessage:[NSString stringWithFormat:@"%i", portNumber] withArguments:nil toReceiver:@"udpreceive_port"];
+}
+
 #pragma mark - PDReceiverDelegate
 
 - (void)receivePrint:(NSString *)message

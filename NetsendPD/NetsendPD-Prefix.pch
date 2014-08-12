@@ -14,7 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "DDLog.h"
-
+    #import "GCDAsyncSocket.h"
 
     #ifdef DEBUG
     static const int ddLogLevel = LOG_LEVEL_VERBOSE;

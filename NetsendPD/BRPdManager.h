@@ -18,4 +18,7 @@
           withPath: (NSString *) patchPath;
 - (void) setSoundActive: (BOOL) isActive;
 
+- (void) sendBufferSize: (int) buffer;
+- (void) sendPortNumber: (int) portNumber;
+
 @end

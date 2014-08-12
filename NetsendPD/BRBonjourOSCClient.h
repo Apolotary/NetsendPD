@@ -10,7 +10,45 @@
 // And communicates via OSC protocol
 
 #import <Foundation/Foundation.h>
+#import "F53OSC.h"
+
+typedef enum BRConnectionStatus : NSUInteger {
+    BRConnectionStatusConnected = 0,
+    BRConnectionStatusDisconnected = 1,
+    BRConnectionStatusPublishing = 2,
+    BRConnectionStatusWaitingForServer = 3
+} BRConnectionStatus;
+
+@protocol BonjourOSCReceiverDelegate <NSObject>
+
+- (void)receiveOSCMessage: (F53OSCMessage *) message; // strictly OSC-messages, which are parsed later
+- (void)updateLogWithMessage: (NSString *) message
+      updateConnectionStatus: (BOOL) shouldUpdate;   // general debug messages
+
+@end
 
 @interface BRBonjourOSCClient : NSObject
+
+@property (strong, nonatomic) NSNetService *service;
+@property (strong, nonatomic) GCDAsyncSocket *socket;
+
+@property (strong, nonatomic) NSString *localIP;
+@property (strong, nonatomic) NSString *serverIP;
+
+@property (weak, nonatomic) id<BonjourOSCReceiverDelegate> oscDelegate;
+@property BRConnectionStatus connectionStatus;
+
+- (instancetype)initWithServiceName: (NSString *) name;
+
+- (void) advertiseBonjourServiceWithName: (NSString *) serviceName;
+
+// sends OSC message with connect/disconnect to streaming server
+- (void) connectToStreamingServer;
+- (void) disconnectFromStreamingServer;
+
+- (void) sendOSCMessageWithPattern: (NSString *) pattern
+                      andArguments: (NSArray *) arguments;
+
+- (NSString *)getIPAddress:(BOOL)preferIPv4;
 
 @end
