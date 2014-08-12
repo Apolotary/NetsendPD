@@ -13,7 +13,11 @@
 #include <arpa/inet.h>
 #include <net/if.h>
 
-@interface BRBonjourOSCClient () <NSNetServiceDelegate, GCDAsyncSocketDelegate>
+@interface BRBonjourOSCClient () <NSNetServiceDelegate, GCDAsyncSocketDelegate, F53OSCClientDelegate, F53OSCPacketDestination>
+{
+    F53OSCClient *_oscClient;
+    F53OSCServer *_oscServer;
+}
 
 @end
 
@@ -95,18 +99,32 @@
 
 - (void) connectToStreamingServer
 {
-    
+    [self sendOSCMessageWithPattern:kOSCPatternConnect andArguments:@[_localIP]];
 }
 
 - (void) disconnectFromStreamingServer
 {
-    
+    [self sendOSCMessageWithPattern:kOSCPatternDisconnect andArguments:@[_localIP]];
 }
 
 - (void) sendOSCMessageWithPattern: (NSString *) pattern
                       andArguments: (NSArray *) arguments
 {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:pattern arguments:arguments];
+    [_oscClient sendPacket:message toHost:_serverIP onPort:OSC_SEND_PORT];
+}
+
+// OSC delegate method
+
+- (void) takeMessage:(F53OSCMessage *)message
+{
+    // other messages so far are simple connect/disconnect confirmations
+    if ([message.addressPattern isEqualToString:kOSCPatternServerIP])
+    {
+        _serverIP = [message.arguments firstObject];
+    }
     
+    [_oscDelegate receiveOSCMessage:message];
 }
 
 #pragma mark - Getting IP address

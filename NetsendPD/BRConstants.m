@@ -11,6 +11,10 @@
 NSString *const kBonjourDomain = @"local.";
 NSString *const kBonjourServiceType = @"_netsendpd._udp.";
 
+NSString *const kOSCPatternConnect = @"/connect";
+NSString *const kOSCPatternDisconnect = @"/disconnect";
+NSString *const kOSCPatternServerIP = @"/serverIP";
+
 @implementation BRConstants
 
 @end

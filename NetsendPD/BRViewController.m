@@ -8,6 +8,7 @@
 
 #import "BRViewController.h"
 #import "BRBonjourOSCClient.h"
+#import "BRConstants.h"
 
 @interface BRViewController () <UIAlertViewDelegate, BonjourOSCReceiverDelegate>
 {
@@ -55,7 +56,8 @@
 
 - (void)receiveOSCMessage: (F53OSCMessage *) message
 {
-    
+    NSString *oscMessage = [NSString stringWithFormat:@"OSC message: %@ %@", message.addressPattern, message.arguments.description];
+    [self updateLogWithMessage:oscMessage updateConnectionStatus:YES];
 }
 
 - (void)updateLogWithMessage: (NSString *) message

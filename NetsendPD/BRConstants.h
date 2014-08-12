@@ -13,8 +13,15 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
+#define OSC_SEND_PORT 3000
+#define OSC_RECEIVE_PORT 3001
+
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
+
+extern NSString *const kOSCPatternConnect;
+extern NSString *const kOSCPatternDisconnect;
+extern NSString *const kOSCPatternServerIP;
 
 @interface BRConstants : NSObject
 
