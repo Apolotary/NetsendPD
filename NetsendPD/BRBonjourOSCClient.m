@@ -57,8 +57,14 @@
         // Publish Service
         [self.service publish];
         
+        _connectionStatus = BRConnectionStatusPublishing;
+        [_oscDelegate updateLogWithMessage:@"Publishing bonjour service" updateConnectionStatus:YES];
+        
     } else {
         DDLogVerbose(@"Unable to create socket. Error %@ with user info %@.", error, [error userInfo]);
+        
+        _connectionStatus = BRConnectionStatusBonjourFailure;
+        [_oscDelegate updateLogWithMessage:@"Failed to publish bonjour service" updateConnectionStatus:YES];
     }
 }
 
@@ -88,11 +94,19 @@
 - (void)netServiceDidPublish:(NSNetService *)service
 {
     DDLogVerbose(@"Bonjour Service Published: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+    
+    _connectionStatus = BRConnectionStatusWaitingForServer;
+    
+    [_oscDelegate updateLogWithMessage:[NSString stringWithFormat:@"Bonjour Service Published: domain(%@) type(%@) name(%@) port(%i) \n Waiting for server...", [service domain], [service type], [service name], (int)[service port]] updateConnectionStatus:YES];
 }
 
 - (void)netService:(NSNetService *)service didNotPublish:(NSDictionary *)errorDict
 {
     DDLogVerbose(@"Failed to Publish Service: domain(%@) type(%@) name(%@) - %@", [service domain], [service type], [service name], errorDict);
+    
+    _connectionStatus = BRConnectionStatusBonjourFailure;
+    
+    [_oscDelegate updateLogWithMessage:[NSString stringWithFormat:@"Failed to Publish Bonjour Service: domain(%@) type(%@) name(%@) - %@", [service domain], [service type], [service name], errorDict] updateConnectionStatus:YES];
 }
 
 #pragma mark - OSC methods
@@ -122,6 +136,15 @@
     if ([message.addressPattern isEqualToString:kOSCPatternServerIP])
     {
         _serverIP = [message.arguments firstObject];
+        _connectionStatus = BRConnectionStatusServerFound;
+    }
+    else if ([message.addressPattern isEqualToString:kOSCPatternConnect])
+    {
+        _connectionStatus = BRConnectionStatusConnected;
+    }
+    else if ([message.addressPattern isEqualToString:kOSCPatternDisconnect])
+    {
+        _connectionStatus = BRConnectionStatusDisconnected;
     }
     
     [_oscDelegate receiveOSCMessage:message];

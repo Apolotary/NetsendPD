@@ -26,19 +26,24 @@
 
 -(IBAction)advertiseButtonPressed:(id)sender
 {
-    UIAlertView *serviceNameAlertView = [[UIAlertView alloc] initWithTitle:@"Bonjour service" message:@"Please input service name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *serviceNameAlertView = [[UIAlertView alloc] initWithTitle:@"Bonjour service" message:@"Please input client number" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [serviceNameAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
+    UITextField *alertViewTextField = [serviceNameAlertView textFieldAtIndex:0];
+    
+    [alertViewTextField setKeyboardType:UIKeyboardTypeDecimalPad];
+    [alertViewTextField setText:@"1"];
     [serviceNameAlertView show];
 }
 
 -(IBAction)connectButtonPressed:(id)sender
 {
-    
+    [_bonjourOSCClient connectToStreamingServer];
 }
 
 -(IBAction)disconnectButtonPressed:(id)sender
 {
-    
+    [_bonjourOSCClient disconnectFromStreamingServer];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -46,8 +51,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *serviceName = [[alertView textFieldAtIndex:0] text];
-    
-    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:serviceName];
+
+    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:[NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, serviceName]];
     [_bonjourOSCClient setOscDelegate:self];
     [self setupLabels];
 }
@@ -92,7 +97,14 @@
     {
         [_labelStatus setText:@"Connection status: Publishing"];
     }
-    
+    else if (_bonjourOSCClient.connectionStatus == BRConnectionStatusBonjourFailure)
+    {
+        [_labelStatus setText:@"Connection status: Bonjour failure"];
+    }
+    else if (_bonjourOSCClient.connectionStatus == BRConnectionStatusServerFound)
+    {
+        [_labelStatus setText:@"Connection status: Found streaming server"];
+    }
 }
 
 - (void) setupLabels

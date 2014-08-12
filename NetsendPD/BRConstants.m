@@ -10,6 +10,7 @@
 
 NSString *const kBonjourDomain = @"local.";
 NSString *const kBonjourServiceType = @"_netsendpd._udp.";
+NSString *const kBonjourServiceNameTemplate = @"streamingChannel_";
 
 NSString *const kOSCPatternConnect = @"/connect";
 NSString *const kOSCPatternDisconnect = @"/disconnect";

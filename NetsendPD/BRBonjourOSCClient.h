@@ -13,10 +13,14 @@
 #import "F53OSC.h"
 
 typedef enum BRConnectionStatus : NSUInteger {
-    BRConnectionStatusConnected = 0,
+    BRConnectionStatusConnected = 0,        // connected / disconnected to streaming server
     BRConnectionStatusDisconnected = 1,
-    BRConnectionStatusPublishing = 2,
-    BRConnectionStatusWaitingForServer = 3
+    
+    BRConnectionStatusWaitingForServer = 2, // waiting until server finds this client via bonjour
+    BRConnectionStatusServerFound = 3,      // server found the client
+    
+    BRConnectionStatusPublishing = 4,       // published or
+    BRConnectionStatusBonjourFailure = 5    // failed to publish bonjour service
 } BRConnectionStatus;
 
 @protocol BonjourOSCReceiverDelegate <NSObject>

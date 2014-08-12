@@ -18,6 +18,7 @@
 
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
+extern NSString *const kBonjourServiceNameTemplate;
 
 extern NSString *const kOSCPatternConnect;
 extern NSString *const kOSCPatternDisconnect;
