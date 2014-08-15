@@ -31,6 +31,11 @@
         _serverIP = @"n/a";
         
         [self advertiseBonjourServiceWithName:name];
+        _oscClient = [[F53OSCClient alloc] init];
+        _oscServer = [[F53OSCServer alloc] init];
+        [_oscServer setPort:OSC_RECEIVE_PORT];
+        [_oscServer setDelegate:self];
+        [_oscServer startListening];
     }
     return self;
 }

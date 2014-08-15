@@ -13,8 +13,8 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-#define OSC_SEND_PORT 3000
-#define OSC_RECEIVE_PORT 3001
+#define OSC_SEND_PORT 6000
+#define OSC_RECEIVE_PORT 6001
 
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
