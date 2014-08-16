@@ -19,11 +19,6 @@
 		431E2931192A5AD000F8646B /* udpreceive~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2930192A5AD000F8646B /* udpreceive~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		431E2933192A5E5600F8646B /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2932192A5E5600F8646B /* udpsend~.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		4335F3CB19825D0B00DA7D2B /* receive_pd_multi.pd in Resources */ = {isa = PBXBuildFile; fileRef = 4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */; };
-		433D68CD193D4AEE00D3C9A9 /* metronome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CC193D4AEE00D3C9A9 /* metronome.wav */; };
-		433D68D2193D4CF000D3C9A9 /* ShyBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CE193D4CF000D3C9A9 /* ShyBass.wav */; };
-		433D68D3193D4CF000D3C9A9 /* ShyDrums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */; };
-		433D68D4193D4CF000D3C9A9 /* ShyGuitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */; };
-		433D68D5193D4CF000D3C9A9 /* ShyPiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */; };
 		43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CCE1929F769006084CF /* AudioToolbox.framework */; };
 		43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43619CD21929F770006084CF /* AVFoundation.framework */; };
 		437123FD19968EBC00960D10 /* BRBonjourOSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 437123FC19968EBC00960D10 /* BRBonjourOSCClient.m */; };
@@ -87,11 +82,6 @@
 		431E2930192A5AD000F8646B /* udpreceive~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpreceive~.c"; sourceTree = "<group>"; };
 		431E2932192A5E5600F8646B /* udpsend~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "udpsend~.c"; sourceTree = "<group>"; };
 		4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = receive_pd_multi.pd; sourceTree = "<group>"; };
-		433D68CC193D4AEE00D3C9A9 /* metronome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome.wav; sourceTree = "<group>"; };
-		433D68CE193D4CF000D3C9A9 /* ShyBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyBass.wav; sourceTree = "<group>"; };
-		433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyDrums.wav; sourceTree = "<group>"; };
-		433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyGuitar.wav; sourceTree = "<group>"; };
-		433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShyPiano.wav; sourceTree = "<group>"; };
 		43619CCE1929F769006084CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43619CD01929F76D006084CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		43619CD21929F770006084CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -323,11 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				4335F3CA19825D0B00DA7D2B /* receive_pd_multi.pd */,
-				433D68CE193D4CF000D3C9A9 /* ShyBass.wav */,
-				433D68CF193D4CF000D3C9A9 /* ShyDrums.wav */,
-				433D68D0193D4CF000D3C9A9 /* ShyGuitar.wav */,
-				433D68D1193D4CF000D3C9A9 /* ShyPiano.wav */,
-				433D68CC193D4AEE00D3C9A9 /* metronome.wav */,
 				0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */,
 				43A5B36D192B195F00933BB7 /* receive_pd.pd */,
 				43868A521928EB590047149D /* NetsendPD-Info.plist */,
@@ -437,17 +422,12 @@
 			files = (
 				4371242C19968ECB00960D10 /* LICENSE.txt in Resources */,
 				43868A631928EB590047149D /* Images.xcassets in Resources */,
-				433D68CD193D4AEE00D3C9A9 /* metronome.wav in Resources */,
-				433D68D2193D4CF000D3C9A9 /* ShyBass.wav in Resources */,
 				4335F3CB19825D0B00DA7D2B /* receive_pd_multi.pd in Resources */,
 				43A5B36E192B195F00933BB7 /* receive_pd.pd in Resources */,
 				4371243219968ECB00960D10 /* README.markdown in Resources */,
 				43868A551928EB590047149D /* InfoPlist.strings in Resources */,
 				43868A5E1928EB590047149D /* Main.storyboard in Resources */,
 				0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */,
-				433D68D4193D4CF000D3C9A9 /* ShyGuitar.wav in Resources */,
-				433D68D3193D4CF000D3C9A9 /* ShyDrums.wav in Resources */,
-				433D68D5193D4CF000D3C9A9 /* ShyPiano.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

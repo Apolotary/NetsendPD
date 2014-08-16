@@ -17,6 +17,7 @@
 {
     F53OSCClient *_oscClient;
     F53OSCServer *_oscServer;
+    int _channelNumber;
 }
 
 @end
@@ -29,6 +30,7 @@
     if (self) {
         [self getIPAddress:YES];
         _serverIP = @"n/a";
+        _channelNumber = [[name stringByReplacingOccurrencesOfString:kBonjourServiceNameTemplate withString:@""] intValue];
         
         [self advertiseBonjourServiceWithName:name];
         _oscClient = [[F53OSCClient alloc] init];
@@ -123,19 +125,21 @@
 
 - (void) connectToStreamingServer
 {
-    [self sendOSCMessageWithPattern:kOSCPatternConnect andArguments:@[_localIP]];
+    [self sendOSCMessageWithPattern:[NSString stringWithFormat:@"%@%i", kOSCPatternClientStream, _channelNumber]
+                       andArguments:@[kOSCMessageConnect, OSC_UDPRECEIVE_PORT, _localIP]];
 }
 
 - (void) disconnectFromStreamingServer
 {
-    [self sendOSCMessageWithPattern:kOSCPatternDisconnect andArguments:@[_localIP]];
+    [self sendOSCMessageWithPattern:[NSString stringWithFormat:@"%@%i", kOSCPatternClientStream, _channelNumber]
+                       andArguments:@[kOSCMessageDisconnect]];
 }
 
 - (void) sendOSCMessageWithPattern: (NSString *) pattern
                       andArguments: (NSArray *) arguments
 {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:pattern arguments:arguments];
-    [_oscClient sendPacket:message toHost:_serverIP onPort:OSC_SEND_PORT];
+    [_oscClient sendPacket:message toHost:_serverIP onPort:OSC_PATCH_RECEIVE_PORT];
 }
 
 // OSC delegate method

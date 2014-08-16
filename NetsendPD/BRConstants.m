@@ -15,6 +15,10 @@ NSString *const kBonjourServiceNameTemplate = @"streamingChannel_";
 NSString *const kOSCPatternConnect = @"/connect";
 NSString *const kOSCPatternDisconnect = @"/disconnect";
 NSString *const kOSCPatternServerIP = @"/serverIP";
+NSString *const kOSCPatternClientStream = @"/stream";
+
+NSString *const kOSCMessageConnect = @"connect";
+NSString *const kOSCMessageDisconnect = @"disconnect";
 
 @implementation BRConstants
 

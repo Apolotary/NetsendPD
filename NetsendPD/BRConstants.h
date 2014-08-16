@@ -16,6 +16,9 @@
 #define OSC_SEND_PORT 6000
 #define OSC_RECEIVE_PORT 6001
 
+#define OSC_PATCH_RECEIVE_PORT 3000
+#define OSC_UDPRECEIVE_PORT @"1349"
+
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
 extern NSString *const kBonjourServiceNameTemplate;
@@ -23,6 +26,10 @@ extern NSString *const kBonjourServiceNameTemplate;
 extern NSString *const kOSCPatternConnect;
 extern NSString *const kOSCPatternDisconnect;
 extern NSString *const kOSCPatternServerIP;
+extern NSString *const kOSCPatternClientStream;
+
+extern NSString *const kOSCMessageConnect;
+extern NSString *const kOSCMessageDisconnect;
 
 @interface BRConstants : NSObject
 
