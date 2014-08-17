@@ -10,7 +10,7 @@ from netifaces import interfaces, ifaddresses, AF_INET
 regtype  = '_netsendpd._udp.'
 udpSendPort = 1349
 oscMobileReceivePort = 6001 #port in iOS app
-oscLocalReceivePort = 3000  #port in Pd-patch
+oscLocalReceivePort = 3002  #port in Pd-patch
 
 timeout  = 5
 queried  = []
