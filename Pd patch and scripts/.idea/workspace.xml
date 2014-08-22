@@ -25,8 +25,8 @@
             <file leaf-file-name="bonjourBrowseOSC.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/bonjourBrowseOSC.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.61009175" vertical-offset="906" max-vertical-offset="2985">
-                    <caret line="92" column="16" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="16" />
+                  <state vertical-scroll-proportion="0.1146789" vertical-offset="0" max-vertical-offset="3060">
+                    <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="54" />
                     <folding />
                   </state>
                 </provider>
@@ -56,9 +56,11 @@
       <file leaf-file-name="server.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.85903084" vertical-offset="855" max-vertical-offset="1545">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="-1.907489" vertical-offset="1524" max-vertical-offset="2205">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+              <folding>
+                <element signature="e#158#171#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +98,7 @@
         <option value="$PROJECT_DIR$/bonjourBrowseOSC.py" />
         <option value="$PROJECT_DIR$/listener.py" />
         <option value="$PROJECT_DIR$/server" />
+        <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
   </component>
@@ -547,14 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bonjourBrowseOSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61009175" vertical-offset="906" max-vertical-offset="2985">
-          <caret line="92" column="16" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/pythonosc/dispatcher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
@@ -579,11 +574,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bonjourBrowseOSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1146789" vertical-offset="0" max-vertical-offset="3060">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.85903084" vertical-offset="855" max-vertical-offset="1545">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding />
+        <state vertical-scroll-proportion="-1.907489" vertical-offset="1524" max-vertical-offset="2205">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+          <folding>
+            <element signature="e#158#171#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
