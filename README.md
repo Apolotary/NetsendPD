@@ -2,7 +2,7 @@
 
 A multi-channel audio streaming proof of concept for Pd+iOS architecture. 
 
-In a nutshell, this project allows you to stream any multi (2 and more) channel audio from your mac/PC server in realtime to your mobile iOS clients. At the same time, clients are able to communicate with server via OSC protocol.
+In a nutshell, this project allows you to stream any multi (2 and more) channel audio from your Mac/PC server in realtime to your mobile iOS clients. At the same time, clients are able to communicate with server via OSC protocol.
 
 
 

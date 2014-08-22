@@ -1,0 +1,103 @@
+"""
+This is a simple server implementation, which looks for clients through Bonjour protocol,
+and communicates with clients / Pd patch via OSC protocol.
+"""
+
+import socket
+
+from zeroconf import raw_input, ServiceBrowser, Zeroconf
+from pythonosc import osc_message_builder
+from pythonosc import udp_client
+from pythonosc import dispatcher
+from pythonosc import osc_server
+
+
+"""
+Bonjour class that helps in monitoring connected/disconnected mobile clients
+"""
+class BonjourListener(object):
+    """
+    Connect function is called when a new Bonjour client was found
+    Disconnect is called when Bonjour client is lost/removed
+    """
+    def __init__(self, connect_function, disconnect_function):
+        self.connect_function = connect_function
+        self.disconnect_function = disconnect_function
+
+    def remove_service(self, zeroconf, type, name):
+        self.disconnect_function(name)
+        print("Service %s removed" % (name,))
+
+    def add_service(self, zeroconf, type, name):
+        info = zeroconf.getServiceInfo(type, name)
+        self.connect_function(info.name, socket.inet_ntoa(info.address))
+        print("Service %s added, service info: %s %s" % (name, info.name, socket.inet_ntoa(info.address)))
+
+"""
+A class that describes mobile clients when they are found via Bonjour protocol.
+"""
+class BonjourClient:
+    def __init__(self, name, host_ip, channel_num):
+        self.name = name
+        self.host_ip = host_ip
+        self.channel_num = channel_num
+
+"""
+OSC class that handles client/server communication via OSC protocol between mobile clients and a Pd patch
+"""
+class OSCClientServer:
+
+    def __init__(self):
+        self.osc_path_stream = "/stream"
+        self.osc_path_server_ip = "/serverIP"
+        self.osc_path_connect = "/connect"
+        self.osc_path_disconnect = "/disconnect"
+        self.osc_path_volume = "/volume"
+
+    """
+    Sends a generic OSC message, it's important to note that osc_args is supposed to be a list,
+    so arguments should be ordered if it matters for the recipient.
+    """
+    def osc_client_send_message(self, receiver_ip, receiver_port, osc_path, osc_args):
+        self.client = udp_client.UDPClient(receiver_ip, receiver_port)
+
+        osc_message = osc_message_builder.OscMessageBuilder(address = osc_path)
+
+        for argument in osc_args:
+            osc_message.add_arg(argument)
+
+        osc_message.build()
+        self.client.send(osc_message)
+
+    """
+    A new Bonjour client was found, thus we're sending message to Pd patch, so that
+    it would connect to the mobile client.
+
+    bonjour_client - mobile client itself
+    client_udpreceive_port - port used in subpatch within iOS application
+    patch_host_ip - IP of a host where Pd patch is running (in most cases - 127.0.0.1)
+    patch_host_osc_port - OSC receiving port of the same patch
+    """
+    def osc_client_send_bonjour_connect(self, bonjour_client, client_udpreceive_port, patch_host_ip, patch_osc_port):
+        osc_args = ['connect', client_udpreceive_port, bonjour_client.host_ip]
+        self.osc_client_send_message(patch_host_ip, patch_osc_port, self.osc_path_stream + bonjour_client.channel_num, osc_args)
+
+    """
+    Bonjour client is lost/disconnected, send a disconnect message to Pd patch
+
+    bonjour_client - mobile client itself
+    patch_host_ip - IP of a host where Pd patch is running (in most cases - 127.0.0.1)
+    patch_host_osc_port - OSC receiving port of the same patch
+    """
+    def osc_client_send_bonjour_disconnect(self, bonjour_client, patch_host_ip, patch_osc_port):
+        osc_args = ['disconnect']
+        self.osc_client_send_message(patch_host_ip, patch_osc_port, self.osc_path_stream + bonjour_client.channel_num, osc_args)
+
+    """
+    
+    """
+
+
+
+
+
