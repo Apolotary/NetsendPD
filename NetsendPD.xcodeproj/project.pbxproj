@@ -391,6 +391,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bektur Ryskeldiev";
 				TargetAttributes = {
+					43868A461928EB590047149D = {
+						DevelopmentTeam = JYXK2RF942;
+					};
 					43868A671928EB590047149D = {
 						TestTargetID = 43868A461928EB590047149D;
 					};
@@ -634,11 +637,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bektur Ryskeldiev (BFWD52UZR5)";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f288a256-544e-4db6-869e-a669e360d9a9";
 				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -651,11 +657,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bektur Ryskeldiev (JYXK2RF942)";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b3176fa6-1f95-480f-8aad-c7f1399a2f01";
 				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";
 				WRAPPER_EXTENSION = app;
 			};
