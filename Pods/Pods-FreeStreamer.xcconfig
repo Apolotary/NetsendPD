@@ -1,2 +1,0 @@
-PODS_FREESTREAMER_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
-PODS_FREESTREAMER_OTHER_LDFLAGS = -lstdc++ -lxml2 -framework AVFoundation -framework AudioToolbox -framework CFNetwork -framework MediaPlayer

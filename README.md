@@ -14,7 +14,7 @@ In a nutshell, this project allows you to stream any multi (2 and more) channel 
 
 * **[Pd-extended](http://puredata.info/downloads/pd-extended) v0.43.4 and up** (you might need to check if Pd can find all external objects used in test patch)
 
-* **Mac or PC** server connected to a wireless spot via **LAN cable** and, ideally, the Wi-Fi spot should work in **5Ghz frequency.**
+* **Mac or PC** server connected to a wireless spot via **LAN cable** and, ideally, the Wi-Fi spot should work in **5Ghz mode.**
 
 
 ## Setup and usage
