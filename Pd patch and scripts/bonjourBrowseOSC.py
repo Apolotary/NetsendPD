@@ -30,7 +30,7 @@ currentBonjourClient = BonjourClient()
 
 def get_server_ip():
     for ifaceName in interfaces():
-        if ifaceName == 'en0':
+        if ifaceName == 'en1':
             address = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] )]
             return address[0]
 

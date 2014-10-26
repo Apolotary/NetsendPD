@@ -16,7 +16,7 @@
 #define OSC_SEND_PORT 6000
 #define OSC_RECEIVE_PORT 6001
 
-#define OSC_PATCH_RECEIVE_PORT 3003
+#define OSC_PATCH_RECEIVE_PORT 3002
 #define OSC_UDPRECEIVE_PORT @"1349"
 
 extern NSString *const kBonjourDomain;
