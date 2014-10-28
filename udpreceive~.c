@@ -138,7 +138,7 @@ static int udpreceive_tilde_setsocketoptions(int sockfd);
 
 static t_class *udpreceive_tilde_class;
 static t_symbol *ps_format, *ps_channels, *ps_framesize, *ps_overflow, *ps_underflow, *ps_packets,
-                *ps_queuesize, *ps_average, *ps_sf_float, *ps_sf_16bit, *ps_sf_8bit, 
+                *ps_queuesize, *ps_average, *ps_sf_float, *ps_sf_16bit, *ps_sf_8bit,
                 *ps_sf_mp3, *ps_sf_aac, *ps_sf_unknown, *ps_bitrate, *ps_hostname, *ps_nothing,
                 *ps_tag_errors;
 
@@ -158,7 +158,7 @@ static void udpreceive_tilde_reset(t_udpreceive_tilde* x, t_floatarg buffer)
         x->x_average[i] = x->x_maxframes;
     x->x_averagecur = 0;
 
-    i = (int)buffer;    
+    i = (int)buffer;
     if ((i > 0)&&(i < DEFAULT_AUDIO_BUFFER_FRAMES))
     {
         x->x_maxframes = i;
@@ -223,7 +223,11 @@ static void udpreceive_tilde_datapoll(t_udpreceive_tilde *x)
         if (!((tag_ptr->tag[0] == 'T')&&(tag_ptr->tag[1] == 'A')&&(tag_ptr->tag[2] == 'G')&&(tag_ptr->tag[3] == '!')))
         {
             ++x->x_tag_errors;
-            if (x->x_sync) error("udpreceive~: bad header tag (%d)", x->x_tag_errors);
+            if (x->x_sync)
+            {
+                post("Bad header tag from address: %s \n Error Timestamp: %d", x->x_hostname->s_name, (int)time(NULL));
+                error("udpreceive~: bad header tag (%d)", x->x_tag_errors);
+            }
             x->x_sync = 0;
             /* tag length is 16 bytes, a multiple of the data frame size, so eventually we should resync on a tag */
             return;
@@ -254,14 +258,14 @@ static void udpreceive_tilde_datapoll(t_udpreceive_tilde *x)
         {
             if ( 0 == (ret = udpreceive_tilde_sockerror("recv data"))) return;
 #ifdef _WIN32
-            if ( ret == WSAEFAULT)            
+            if ( ret == WSAEFAULT)
 #else
             if ( ret == EFAULT)
 #endif
             {
                 post ("udpreceive~: EFAULT: %p %lu %d", x->x_frames[x->x_framein].data, x->x_frames[x->x_framein].tag.framesize, n);
-                return; 
-            }            
+                return;
+            }
             udpreceive_tilde_reset(x, 0);
             return;
         }
@@ -317,7 +321,7 @@ static int udpreceive_tilde_createsocket(t_udpreceive_tilde* x, char *address, i
     }
     server.sin_family = AF_INET;
     if (address[0] == 0) server.sin_addr.s_addr = INADDR_ANY;
-    else 
+    else
     {
         hp = gethostbyname(address);
         if (hp == 0)
@@ -404,7 +408,7 @@ static t_int *udpreceive_tilde_perform(t_int *w)
     const int               offset = 3;
     const int               channels = x->x_frames[x->x_frameout].tag.channels;
     int                     i = 0;
-    
+
     x->x_valid = 0;
     for (i = 0; i < x->x_noutlets; i++)
     {
@@ -482,7 +486,7 @@ static t_int *udpreceive_tilde_perform(t_int *w)
             x->x_error = 0;
             break;
         }
-        case SF_8BIT:     
+        case SF_8BIT:
         {
             unsigned char* buf = (unsigned char *)x->x_frames[x->x_frameout].data + BLOCKOFFSET;
 
@@ -677,7 +681,7 @@ static void *udpreceive_tilde_new(t_symbol *s, int argc, t_atom *argv)
 
     x = (t_udpreceive_tilde *)pd_new(udpreceive_tilde_class);
     if (NULL == x) return NULL;
-    for (i = sizeof(t_object); i < (int)sizeof(t_udpreceive_tilde); i++)  
+    for (i = sizeof(t_object); i < (int)sizeof(t_udpreceive_tilde); i++)
         ((char *)x)[i] = 0; /* do we need to do this?*/
 
 #ifdef DEBUG
@@ -745,12 +749,12 @@ static void *udpreceive_tilde_new(t_symbol *s, int argc, t_atom *argv)
     x->x_tag_errors = x->x_framein = x->x_frameout = x->x_valid = 0;
     x->x_maxframes = DEFAULT_QUEUE_LENGTH;
     x->x_vecsize = 64; /* we'll update this later */
-    if (blocksize == 0) x->x_blocksize = DEFAULT_AUDIO_BUFFER_SIZE; 
+    if (blocksize == 0) x->x_blocksize = DEFAULT_AUDIO_BUFFER_SIZE;
     else if (DEFAULT_AUDIO_BUFFER_SIZE%(int)blocksize)
     {
         error("udpreceive~: blocksize must fit snugly in %d", DEFAULT_AUDIO_BUFFER_SIZE);
         return NULL;
-    } 
+    }
     else x->x_blocksize = blocksize; //DEFAULT_AUDIO_BUFFER_SIZE; /* <-- the only place blocksize is set */
     x->x_blockssincerecv = 0;
     x->x_blocksperrecv = x->x_blocksize / x->x_vecsize;
@@ -789,7 +793,7 @@ static void udpreceive_tilde_free(t_udpreceive_tilde *x)
 
 void udpreceive_tilde_setup(void)
 {
-    udpreceive_tilde_class = class_new(gensym("udpreceive~"), 
+    udpreceive_tilde_class = class_new(gensym("udpreceive~"),
         (t_newmethod) udpreceive_tilde_new, (t_method) udpreceive_tilde_free,
         sizeof(t_udpreceive_tilde), CLASS_DEFAULT, A_GIMME, 0);
 
