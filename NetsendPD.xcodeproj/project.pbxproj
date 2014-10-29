@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A4AAC0519FF280400FCA88F /* BRErrorTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AAC0419FF280400FCA88F /* BRErrorTracker.m */; };
+		0A5025FC1A007CC400FC0A8F /* BRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */; };
+		0A5025FE1A00969800FC0A8F /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5025FD1A00969800FC0A8F /* DropboxSDK.framework */; };
+		0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5025FF1A0096AE00FC0A8F /* Security.framework */; };
 		0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */ = {isa = PBXBuildFile; fileRef = 0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */; };
 		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		431E2923192A59D100F8646B /* httpreq.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2907192A59BB00F8646B /* httpreq.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
@@ -71,6 +74,13 @@
 /* Begin PBXFileReference section */
 		0A4AAC0319FF280400FCA88F /* BRErrorTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRErrorTracker.h; sourceTree = "<group>"; };
 		0A4AAC0419FF280400FCA88F /* BRErrorTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRErrorTracker.m; sourceTree = "<group>"; };
+		0A5025FA1A007CC400FC0A8F /* BRLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRLogViewController.h; sourceTree = "<group>"; };
+		0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLogViewController.m; sourceTree = "<group>"; };
+		0A5025FD1A00969800FC0A8F /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		0A5025FF1A0096AE00FC0A8F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0A5026011A0096B800FC0A8F /* libPods-CocoaAsyncSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CocoaAsyncSocket.a"; path = "Pods/build/Debug-iphoneos/libPods-CocoaAsyncSocket.a"; sourceTree = "<group>"; };
+		0A5026021A0096B800FC0A8F /* libPods-CocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CocoaLumberjack.a"; path = "Pods/build/Debug-iphoneos/libPods-CocoaLumberjack.a"; sourceTree = "<group>"; };
+		0A5026031A0096B800FC0A8F /* libPods-libpd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-libpd.a"; path = "Pods/build/Debug-iphoneos/libPods-libpd.a"; sourceTree = "<group>"; };
 		0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = send_pd.pd; sourceTree = "<group>"; };
 		2BACFA8D017E1C5A07022539 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		431E2905192A59BB00F8646B /* httpreceive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = httpreceive.c; sourceTree = "<group>"; };
@@ -154,8 +164,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */,
 				43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */,
 				43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */,
+				0A5025FE1A00969800FC0A8F /* DropboxSDK.framework in Frameworks */,
 				43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */,
 				43868A4F1928EB590047149D /* UIKit.framework in Frameworks */,
 				43868A4B1928EB590047149D /* Foundation.framework in Frameworks */,
@@ -261,6 +273,8 @@
 			children = (
 				43868A5F1928EB590047149D /* BRViewController.h */,
 				43868A601928EB590047149D /* BRViewController.m */,
+				0A5025FA1A007CC400FC0A8F /* BRLogViewController.h */,
+				0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +303,11 @@
 		43868A491928EB590047149D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A5026011A0096B800FC0A8F /* libPods-CocoaAsyncSocket.a */,
+				0A5026021A0096B800FC0A8F /* libPods-CocoaLumberjack.a */,
+				0A5026031A0096B800FC0A8F /* libPods-libpd.a */,
+				0A5025FF1A0096AE00FC0A8F /* Security.framework */,
+				0A5025FD1A00969800FC0A8F /* DropboxSDK.framework */,
 				43619CD21929F770006084CF /* AVFoundation.framework */,
 				43619CD01929F76D006084CF /* AudioUnit.framework */,
 				43619CCE1929F769006084CF /* AudioToolbox.framework */,
@@ -518,6 +537,7 @@
 				43D017A31998B713003B610E /* BRConstants.m in Sources */,
 				4371242E19968ECB00960D10 /* NSData+F53OSCBlob.m in Sources */,
 				4371242919968ECB00960D10 /* F53OSCTimeTag.m in Sources */,
+				0A5025FC1A007CC400FC0A8F /* BRLogViewController.m in Sources */,
 				4371242D19968ECB00960D10 /* MetatoneNetworkManager.m in Sources */,
 				4371242F19968ECB00960D10 /* NSDate+F53OSCTimeTag.m in Sources */,
 				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
@@ -655,10 +675,18 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bektur Ryskeldiev (BFWD52UZR5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f288a256-544e-4db6-869e-a669e360d9a9";
 				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";
@@ -675,10 +703,18 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bektur Ryskeldiev (JYXK2RF942)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b3176fa6-1f95-480f-8aad-c7f1399a2f01";
 				USER_HEADER_SEARCH_PATHS = "./pd-for-ios/libpd/objc ./pd-for-ios/**";

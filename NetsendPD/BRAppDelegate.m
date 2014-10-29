@@ -13,6 +13,8 @@
 
 #import "BRPdManager.h"
 
+#import "BRConstants.h"
+
 @interface BRAppDelegate ()
 
 - (void) setupLogger;
@@ -29,9 +31,40 @@
     BRPdManager *pdManager = [BRPdManager sharedInstance];
     [pdManager openPatch:@"receive_pd.pd" withPath:[[NSBundle mainBundle] bundlePath]];
     
+    NSString* appKey = @"0nvhp9ngucy4tgc";
+    NSString* appSecret = @"q7ojpf5qzj7d3fl";
+    NSString *root = kDBRootAppFolder;
+    
+    DBSession* session =
+    [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
+    [DBSession setSharedSession:session];
+    
     return YES;
 }
-							
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)source
+         annotation:(id)annotation
+{
+    if ([[DBSession sharedSession] handleOpenURL:url])
+    {
+        if ([[DBSession sharedSession] isLinked])
+        {
+            DDLogVerbose(@"Linked successfully");
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxLinked object:nil];
+        }
+        else
+        {
+            DDLogVerbose(@"Unlinked successfully");
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxUnLinked object:nil];
+        }
+        return YES;
+    }
+    DDLogError(@"Can't link the app");
+    return NO;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

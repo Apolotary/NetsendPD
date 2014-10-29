@@ -10,15 +10,22 @@
 
 @interface BRViewController : UIViewController
 {
-    IBOutlet UILabel *_labelStatus;
-    IBOutlet UILabel *_labelLocalIP;
-    IBOutlet UILabel *_labelServiceName;
+    IBOutlet UILabel *_progressTimeLabel;
+    IBOutlet UISlider *_progressTimeSlider;
     
-    IBOutlet UITextView *_logTextView;
+    IBOutlet UIButton *_buttonAdvertise;
+    IBOutlet UIButton *_buttonConnect;
+    IBOutlet UIButton *_buttonDisconnect;
+    IBOutlet UIButton *_buttonLinkDropBox;
 }
+
+-(IBAction)channelButtonPressed:(id)sender;
 
 -(IBAction)advertiseButtonPressed:(id)sender;
 -(IBAction)connectButtonPressed:(id)sender;
 -(IBAction)disconnectButtonPressed:(id)sender;
+
+-(IBAction)dropBoxButtonPressed:(id)sender;
+-(IBAction)logButtonPressed:(id)sender;
 
 @end

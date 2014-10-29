@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-5H-0Cj">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-5H-0Cj">
                                 <rect key="frame" x="135" y="200" width="59" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="xmB-pN-fd5"/>
@@ -30,7 +30,7 @@
                                     <action selector="connectButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="W6e-ts-2Jr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-Vn-Ymi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-Vn-Ymi">
                                 <rect key="frame" x="203" y="438" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mEY-JY-w89"/>
@@ -39,6 +39,9 @@
                                 <state key="normal" title="Show Log">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kf3-uw-0gD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streaming channel:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6j-Sx-TQR">
                                 <rect key="frame" x="20" y="18" width="276" height="21"/>
@@ -55,6 +58,9 @@
                                     <constraint firstAttribute="height" constant="29" id="91D-rp-d3r"/>
                                 </constraints>
                                 <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="s2d-Ra-J13"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xT6-jC-cdr">
                                 <rect key="frame" x="44" y="103" width="30" height="30"/>
@@ -62,6 +68,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Q7j-54-XQc"/>
                                 </constraints>
                                 <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bt2-BU-Xa8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJ1-9p-xOq">
                                 <rect key="frame" x="143" y="103" width="30" height="30"/>
@@ -69,6 +78,9 @@
                                     <constraint firstAttribute="height" constant="30" id="GVW-tj-ckV"/>
                                 </constraints>
                                 <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hEt-fe-zQk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifz-KY-eaa">
                                 <rect key="frame" x="44" y="160" width="30" height="30"/>
@@ -76,6 +88,9 @@
                                     <constraint firstAttribute="height" constant="30" id="XkQ-Ac-EkG"/>
                                 </constraints>
                                 <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xXt-R9-4sx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-w0-AWC">
                                 <rect key="frame" x="246" y="103" width="30" height="30"/>
@@ -83,6 +98,9 @@
                                     <constraint firstAttribute="height" constant="30" id="U9T-hD-Gn1"/>
                                 </constraints>
                                 <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qcc-To-ksR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw1-R4-Sa1">
                                 <rect key="frame" x="143" y="53" width="30" height="30"/>
@@ -90,6 +108,9 @@
                                     <constraint firstAttribute="height" constant="30" id="S2f-Jf-yhU"/>
                                 </constraints>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9gL-rS-oHB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjr-gW-66q">
                                 <rect key="frame" x="246" y="53" width="30" height="30"/>
@@ -97,6 +118,9 @@
                                     <constraint firstAttribute="height" constant="30" id="RfU-xO-Wc6"/>
                                 </constraints>
                                 <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="i4X-8T-6ZM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-8P-O8W">
                                 <rect key="frame" x="143" y="160" width="30" height="30"/>
@@ -104,6 +128,9 @@
                                     <constraint firstAttribute="height" constant="30" id="KKL-Rv-UGV"/>
                                 </constraints>
                                 <state key="normal" title="8"/>
+                                <connections>
+                                    <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tTm-Ao-P6W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-id-C7W">
                                 <rect key="frame" x="-1" y="200" width="121" height="32"/>
@@ -118,15 +145,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcU-Ag-Vvf">
-                                <rect key="frame" x="44" y="438" width="97" height="30"/>
+                                <rect key="frame" x="44" y="438" width="92" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vCg-QK-lyM"/>
                                 </constraints>
-                                <state key="normal" title="Dropbox login">
+                                <state key="normal" title="Link Dropbox">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dropBoxButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kR2-xw-Hhh"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uA-Bx-Mg6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uA-Bx-Mg6">
                                 <rect key="frame" x="44" y="339" width="93" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rMF-K8-QTc"/>
@@ -135,7 +165,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-04-hHI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-04-hHI">
                                 <rect key="frame" x="196" y="339" width="88" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="DZP-bk-Xdl"/>
@@ -145,7 +175,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="6e2-zO-HaY">
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="6e2-zO-HaY">
                                 <rect key="frame" x="42" y="386" width="244" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SLf-Xo-vUj"/>
@@ -193,6 +223,7 @@
                             <constraint firstItem="6e2-zO-HaY" firstAttribute="trailing" secondItem="9iX-04-hHI" secondAttribute="trailing" id="h7g-OA-dQ7"/>
                             <constraint firstItem="aw1-R4-Sa1" firstAttribute="leading" secondItem="AJ1-9p-xOq" secondAttribute="leading" id="htZ-YF-EK5"/>
                             <constraint firstItem="lJy-i8-L7i" firstAttribute="top" secondItem="0WM-5H-0Cj" secondAttribute="top" id="i9S-vZ-YjZ"/>
+                            <constraint firstItem="0WM-5H-0Cj" firstAttribute="top" secondItem="WPJ-8P-O8W" secondAttribute="bottom" constant="10" id="jML-dV-APc"/>
                             <constraint firstItem="fyc-id-C7W" firstAttribute="top" secondItem="ifz-KY-eaa" secondAttribute="bottom" constant="8" symbolic="YES" id="kGg-d4-S0D"/>
                             <constraint firstItem="jcU-Ag-Vvf" firstAttribute="top" secondItem="6e2-zO-HaY" secondAttribute="bottom" constant="22" id="kML-PW-27j"/>
                             <constraint firstItem="AJ1-9p-xOq" firstAttribute="trailing" secondItem="aw1-R4-Sa1" secondAttribute="trailing" id="kQF-gZ-cqc"/>
@@ -210,17 +241,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="_buttonAdvertise" destination="fyc-id-C7W" id="aHh-LA-e90"/>
+                        <outlet property="_buttonConnect" destination="0WM-5H-0Cj" id="O96-Q7-Gdp"/>
+                        <outlet property="_buttonDisconnect" destination="lJy-i8-L7i" id="qLg-vc-xOh"/>
                         <outlet property="_logTextView" destination="wcf-Qe-QK9" id="gcw-W1-3fU"/>
+                        <outlet property="_progressTimeLabel" destination="9iX-04-hHI" id="tWu-9w-LUa"/>
+                        <outlet property="_progressTimeSlider" destination="6e2-zO-HaY" id="DBU-QZ-QhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="7"/>
+            <point key="canvasLocation" x="304" y="-21"/>
         </scene>
-        <!--View Controller-->
+        <!--Log View Controller-->
         <scene sceneID="ZQI-Fs-PHP">
             <objects>
-                <viewController id="wJA-6g-LdN" sceneMemberID="viewController">
+                <viewController id="wJA-6g-LdN" customClass="BRLogViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="07d-fe-Ini"/>
                         <viewControllerLayoutGuide type="bottom" id="ANM-7G-M7Q"/>
@@ -267,6 +303,9 @@
                                 <state key="normal" title="Dismiss">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="wJA-6g-LdN" eventType="touchUpInside" id="iKM-Td-xEq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,6 +329,12 @@
                             <constraint firstItem="fom-Kk-dQs" firstAttribute="top" secondItem="wcf-Qe-QK9" secondAttribute="bottom" constant="18" id="z6u-MK-dRa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_labelIP" destination="yVQ-nn-0rG" id="iy3-Rb-U6l"/>
+                        <outlet property="_labelName" destination="suM-Sf-Eun" id="OFW-Ye-2HT"/>
+                        <outlet property="_labelStatus" destination="zol-aT-5rn" id="xNn-Ny-b4X"/>
+                        <outlet property="_logTextView" destination="wcf-Qe-QK9" id="qAC-Lj-xGy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-Mh-hJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

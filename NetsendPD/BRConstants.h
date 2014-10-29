@@ -19,6 +19,9 @@
 #define OSC_PATCH_RECEIVE_PORT 3002
 #define OSC_UDPRECEIVE_PORT @"1349"
 
+extern NSString *const kNotificationDropboxLinked;
+extern NSString *const kNotificationDropboxUnLinked;
+
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
 extern NSString *const kBonjourServiceNameTemplate;

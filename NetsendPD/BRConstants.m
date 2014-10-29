@@ -8,6 +8,9 @@
 
 #import "BRConstants.h"
 
+NSString *const kNotificationDropboxLinked = @"NotificationDropboxLinked";
+NSString *const kNotificationDropboxUnLinked = @"NotificationDropboxUnLinked";
+
 NSString *const kBonjourDomain = @"local.";
 NSString *const kBonjourServiceType = @"_netsendpd._udp.";
 NSString *const kBonjourServiceNameTemplate = @"streamingChannel_";
