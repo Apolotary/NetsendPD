@@ -19,6 +19,8 @@
 #define OSC_PATCH_RECEIVE_PORT 3002
 #define OSC_UDPRECEIVE_PORT @"1349"
 
+#define ERROR_TRACKING_TIME 60 // seconds, or 1 min
+
 extern NSString *const kNotificationDropboxLinked;
 extern NSString *const kNotificationDropboxUnLinked;
 

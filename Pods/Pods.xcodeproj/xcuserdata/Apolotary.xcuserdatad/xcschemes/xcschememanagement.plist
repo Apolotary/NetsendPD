@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-CHCSVParser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CocoaAsyncSocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,42 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C8750AB4DACEFCF22EB72C2</key>
+		<key>2936F5AF3D620A444E95D367</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62B870682AB7CC7F7B94B7AF</key>
+		<key>64AEB65B3A9221359A401F4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>822C5A7640601A9F68CFF1B8</key>
+		<key>A897643626FECD9FD1B894DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8525294491B75118F9AB5EE4</key>
+		<key>CE21A5A530D423B14E199B69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A24717903FBF89560253D938</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2AEFA9E61CA2767C61C629C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D5653DE0945A87287CA99F6C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA6D1225059BC2DD611E7883</key>
+		<key>F28AFEC85DDACC290D154AF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

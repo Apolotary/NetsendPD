@@ -8,6 +8,7 @@
 
 #import "BRViewController.h"
 #import "BRBonjourOSCClient.h"
+#import "BRErrorTracker.h"
 #import "BRConstants.h"
 
 #import "BRLogViewController.h"
@@ -22,6 +23,9 @@
     NSString *_stringLog;
     BRConnectionStatus _status;
     
+    BRErrorTracker *_errorTracker;
+    NSTimer *_errorTimer;
+    
     UIColor *_blueTextColor;
 }
 
@@ -32,6 +36,8 @@
 - (void) dropBoxUnlinkedSuccessfully;
 
 - (void) updateStatuses;
+- (void) updateTrackingProgress:(id) sender;
+- (void) startErrorTracking;
 
 @end
 
@@ -94,25 +100,33 @@
     _status = _bonjourOSCClient.connectionStatus;
 }
 
-#pragma mark - OSCDelegate
+#pragma mark - Timer and Slider methods
 
-- (void)receiveOSCMessage: (F53OSCMessage *) message
+- (void) updateTrackingProgress:(id) sender
 {
-    NSString *oscMessage = [NSString stringWithFormat:@"OSC message: %@ %@", message.addressPattern, message.arguments.description];
-    [self updateLogWithMessage:oscMessage updateConnectionStatus:YES];
-}
-
-- (void)updateLogWithMessage: (NSString *) message
-      updateConnectionStatus: (BOOL) shouldUpdate
-{
-    if (shouldUpdate)
-    {
-        [self updateStatuses];
-    }
+    [_progressTimeSlider setValue:_errorTimer.timeInterval animated:YES];
     
-    _stringLog = [NSString stringWithFormat:@"%@ \n %@", _stringLog, message];
+    if (_errorTimer.timeInterval == ERROR_TRACKING_TIME)
+    {
+        [_errorTracker setIsTrackingErrors:NO];
+        [_errorTracker setEndTime:_errorTimer.timeInterval];
+    }
 }
 
+- (void) startErrorTracking
+{
+    NSTimeInterval timeRightNow = [[NSDate date] timeIntervalSince1970];
+    
+    _errorTracker = [BRErrorTracker sharedInstance];
+    [_errorTracker setStartTime:timeRightNow];
+    [_errorTracker setIsTrackingErrors:YES];
+    
+    [_progressTimeSlider setMinimumValue:0.0];
+    [_progressTimeSlider setMaximumValue:ERROR_TRACKING_TIME];
+    
+    _errorTimer = [NSTimer scheduledTimerWithTimeInterval:ERROR_TRACKING_TIME target:self selector:@selector(updateTrackingProgress:) userInfo:nil repeats:NO];
+    [_errorTimer fire];
+}
 
 #pragma mark - Button methods
 
@@ -182,6 +196,25 @@
     
     [_logViewController setupWithIP:_stringIP bonjourName:_stringName status:_status log:_stringLog andDelegate:self];
     [self presentViewController:_logViewController animated:YES completion:nil];
+}
+
+#pragma mark - OSCDelegate
+
+- (void)receiveOSCMessage: (F53OSCMessage *) message
+{
+    NSString *oscMessage = [NSString stringWithFormat:@"OSC message: %@ %@", message.addressPattern, message.arguments.description];
+    [self updateLogWithMessage:oscMessage updateConnectionStatus:YES];
+}
+
+- (void)updateLogWithMessage: (NSString *) message
+      updateConnectionStatus: (BOOL) shouldUpdate
+{
+    if (shouldUpdate)
+    {
+        [self updateStatuses];
+    }
+    
+    _stringLog = [NSString stringWithFormat:@"%@ \n %@", _stringLog, message];
 }
 
 #pragma mark - UIAlertViewDelegate

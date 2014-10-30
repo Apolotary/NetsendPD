@@ -1,4 +1,5 @@
 PODS:
+  - CHCSVParser (2.1.0)
   - CocoaAsyncSocket (7.3.5)
   - CocoaLumberjack (1.9.2):
     - CocoaLumberjack/Extensions
@@ -8,11 +9,13 @@ PODS:
   - libpd (0.7.0)
 
 DEPENDENCIES:
+  - CHCSVParser (~> 2.1)
   - CocoaAsyncSocket (~> 7.3)
   - CocoaLumberjack (~> 1.8)
   - libpd (~> 0.7)
 
 SPEC CHECKSUMS:
+  CHCSVParser: 1ebc9783114707e2b6f83b20fe0f246eb2fabae0
   CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f

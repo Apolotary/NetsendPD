@@ -10,4 +10,14 @@
 
 @interface BRErrorTracker : NSObject
 
+// set this property to enable/disable error tracking
+@property BOOL isTrackingErrors;
+@property NSTimeInterval startTime;
+@property NSTimeInterval endTime;
+
++ (instancetype)sharedInstance;
+
+- (void)addErrorWithTimeStamp:(NSTimeInterval) errorTimeStamp;
+- (void)writeAndUploadErrorReports;
+
 @end

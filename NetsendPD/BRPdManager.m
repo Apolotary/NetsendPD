@@ -7,6 +7,7 @@
 //
 
 #import "BRPdManager.h"
+#import "BRErrorTracker.h"
 #import "PdAudioController.h"
 #import "PdBase.h"
 
@@ -40,6 +41,9 @@ extern void udpreceive_tilde_setup(void);
 {
     self = [super init];
     if (self) {
+        // initialize error tracker before Pds
+        [BRErrorTracker sharedInstance];
+        
         [PdBase initialize];
         [PdBase setDelegate:self];
         [PdBase computeAudio:YES];
@@ -85,7 +89,6 @@ extern void udpreceive_tilde_setup(void);
 - (void)receivePrint:(NSString *)message
 {
     DDLogVerbose(@"Pd print: %@", message);
-    
     
 }
 
