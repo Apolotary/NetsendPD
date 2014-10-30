@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-5H-0Cj">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-5H-0Cj">
                                 <rect key="frame" x="135" y="200" width="59" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="xmB-pN-fd5"/>
@@ -132,7 +132,7 @@
                                     <action selector="channelButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tTm-Ao-P6W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-id-C7W">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-id-C7W">
                                 <rect key="frame" x="-1" y="200" width="121" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="PTb-d5-a5F"/>
@@ -181,7 +181,7 @@
                                     <constraint firstAttribute="height" constant="30" id="SLf-Xo-vUj"/>
                                 </constraints>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-i8-L7i">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-i8-L7i">
                                 <rect key="frame" x="226" y="200" width="78" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="9dA-Ui-SPE"/>
@@ -244,9 +244,18 @@
                         <outlet property="_buttonAdvertise" destination="fyc-id-C7W" id="aHh-LA-e90"/>
                         <outlet property="_buttonConnect" destination="0WM-5H-0Cj" id="O96-Q7-Gdp"/>
                         <outlet property="_buttonDisconnect" destination="lJy-i8-L7i" id="qLg-vc-xOh"/>
+                        <outlet property="_buttonLinkDropBox" destination="jcU-Ag-Vvf" id="4KK-6U-BXo"/>
                         <outlet property="_logTextView" destination="wcf-Qe-QK9" id="gcw-W1-3fU"/>
                         <outlet property="_progressTimeLabel" destination="9iX-04-hHI" id="tWu-9w-LUa"/>
                         <outlet property="_progressTimeSlider" destination="6e2-zO-HaY" id="DBU-QZ-QhG"/>
+                        <outletCollection property="_channelButtons" destination="iK8-Na-HMT" id="BfR-XM-L3T"/>
+                        <outletCollection property="_channelButtons" destination="xT6-jC-cdr" id="Kwt-hp-rf0"/>
+                        <outletCollection property="_channelButtons" destination="AJ1-9p-xOq" id="b0Y-cu-Tkf"/>
+                        <outletCollection property="_channelButtons" destination="ifz-KY-eaa" id="C5U-hc-SmL"/>
+                        <outletCollection property="_channelButtons" destination="CJd-w0-AWC" id="vGR-r8-zax"/>
+                        <outletCollection property="_channelButtons" destination="aw1-R4-Sa1" id="B3F-ZJ-WY1"/>
+                        <outletCollection property="_channelButtons" destination="wjr-gW-66q" id="RuU-yx-Wn8"/>
+                        <outletCollection property="_channelButtons" destination="WPJ-8P-O8W" id="5Cz-dy-VCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

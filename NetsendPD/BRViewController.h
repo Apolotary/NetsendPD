@@ -17,6 +17,8 @@
     IBOutlet UIButton *_buttonConnect;
     IBOutlet UIButton *_buttonDisconnect;
     IBOutlet UIButton *_buttonLinkDropBox;
+    
+    IBOutletCollection(UIButton) NSArray *_channelButtons;
 }
 
 -(IBAction)channelButtonPressed:(id)sender;

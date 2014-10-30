@@ -12,11 +12,17 @@
 
 #import "BRLogViewController.h"
 
-@interface BRViewController () <UIAlertViewDelegate, BonjourOSCReceiverDelegate>
+@interface BRViewController () <UIAlertViewDelegate, BonjourOSCReceiverDelegate, BRLogViewControllerDelegate>
 {
     BRBonjourOSCClient *_bonjourOSCClient;
     BRLogViewController *_logViewController;
-    NSString *_channelString;
+    NSString *_stringChannel;
+    NSString *_stringIP;
+    NSString *_stringName;
+    NSString *_stringLog;
+    BRConnectionStatus _status;
+    
+    UIColor *_blueTextColor;
 }
 
 - (void) addObservers;
@@ -25,72 +31,12 @@
 - (void) dropBoxLinkedSuccessfully;
 - (void) dropBoxUnlinkedSuccessfully;
 
+- (void) updateStatuses;
+- (void) loadLogViewController;
+
 @end
 
 @implementation BRViewController
-
-//-(IBAction)advertiseButtonPressed:(id)sender
-//{
-//    UIAlertView *serviceNameAlertView = [[UIAlertView alloc] initWithTitle:@"Bonjour service" message:@"Please input client number" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//    [serviceNameAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-//    
-//    UITextField *alertViewTextField = [serviceNameAlertView textFieldAtIndex:0];
-//    
-//    [alertViewTextField setKeyboardType:UIKeyboardTypeDecimalPad];
-//    [alertViewTextField setText:@"1"];
-//    [serviceNameAlertView show];
-//}
-//
-//-(IBAction)connectButtonPressed:(id)sender
-//{
-//    [_bonjourOSCClient connectToStreamingServer];
-//}
-//
-//-(IBAction)disconnectButtonPressed:(id)sender
-//{
-//    [_bonjourOSCClient disconnectFromStreamingServer];
-//}
-//
-//#pragma mark - UIAlertViewDelegate
-//
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    NSString *serviceName = [[alertView textFieldAtIndex:0] text];
-//
-//    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:[NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, serviceName]];
-//    [_bonjourOSCClient setOscDelegate:self];
-//    [self setupLabels];
-//}
-//
-//#pragma mark - OSCDelegate
-//
-//- (void)receiveOSCMessage: (F53OSCMessage *) message
-//{
-//    NSString *oscMessage = [NSString stringWithFormat:@"OSC message: %@ %@", message.addressPattern, message.arguments.description];
-//    [self updateLogWithMessage:oscMessage updateConnectionStatus:YES];
-//}
-//
-//- (void)updateLogWithMessage: (NSString *) message
-//      updateConnectionStatus: (BOOL) shouldUpdate
-//{
-//    if (shouldUpdate)
-//    {
-//        [self setupLabels];
-//    }
-//    
-//    [_logTextView setText:[NSString stringWithFormat:@"%@ \n %@", _logTextView.text, message]];
-//    [_logTextView scrollRangeToVisible:NSMakeRange([_logTextView.text length], 0)];
-//}
-//
-//#pragma mark - Setting up labels and statuses
-//
-//- (void) setupLabels
-//{
-//    [_labelLocalIP setText:[NSString stringWithFormat:@"Local IP: %@", _bonjourOSCClient.localIP]];
-//    [_labelServiceName setText:[NSString stringWithFormat:@"Bonjour name: %@", _bonjourOSCClient.service.name]];
-//    [self setConnectionStatus];
-//}
-//
 
 #pragma mark - Working with observers
 
@@ -110,12 +56,18 @@
 
 - (void) dropBoxLinkedSuccessfully
 {
+    // dropbox linked, start advertising service
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Dropbox linked successfully, now pick a channel and press advertise button to start" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
+    [alert show];
+    [_buttonLinkDropBox setTitle:@"Unlink Dropbox" forState:UIControlStateNormal];
 }
 
 - (void) dropBoxUnlinkedSuccessfully
 {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Dropbox unlinked successfully, you need to login again to upload data" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
+    [alert show];
+    [_buttonLinkDropBox setTitle:@"Link Dropbox" forState:UIControlStateNormal];
 }
 
 #pragma mark - Showing messages
@@ -134,26 +86,80 @@
     [alertView show];
 }
 
-#pragma mark - IBActions
+#pragma mark - Updating statuses 
+
+- (void) updateStatuses
+{
+    _stringIP = _bonjourOSCClient.localIP;
+    _stringName = _bonjourOSCClient.service.name;
+    _status = _bonjourOSCClient.connectionStatus;
+}
+
+#pragma mark - OSCDelegate
+
+- (void)receiveOSCMessage: (F53OSCMessage *) message
+{
+    NSString *oscMessage = [NSString stringWithFormat:@"OSC message: %@ %@", message.addressPattern, message.arguments.description];
+    [self updateLogWithMessage:oscMessage updateConnectionStatus:YES];
+}
+
+- (void)updateLogWithMessage: (NSString *) message
+      updateConnectionStatus: (BOOL) shouldUpdate
+{
+    if (shouldUpdate)
+    {
+        [self updateStatuses];
+    }
+    
+    _stringLog = [NSString stringWithFormat:@"%@ \n %@", _stringLog, message];
+}
+
+
+#pragma mark - Button methods
+
+- (void) updateBackgroundForChannelButton: (UIButton *) button
+{
+    [button setBackgroundColor:_blueTextColor];
+    [button setTintColor:[UIColor whiteColor]];
+    
+    [_buttonAdvertise setEnabled:YES];
+    [_buttonConnect setEnabled:YES];
+    [_buttonDisconnect setEnabled:YES];
+    
+    for (UIButton *channelButton in _channelButtons)
+    {
+        if (![button isEqual:channelButton])
+        {
+            [channelButton setBackgroundColor:[UIColor clearColor]];
+            [channelButton setTintColor:_blueTextColor];
+        }
+    }
+}
 
 -(IBAction)channelButtonPressed:(id)sender
 {
-    
+    if ([sender isKindOfClass:[UIButton class]])
+    {
+        UIButton *senderButton = (UIButton *) sender;
+        _stringChannel = senderButton.titleLabel.text;
+        [self updateBackgroundForChannelButton:senderButton];
+    }
 }
 
 -(IBAction)advertiseButtonPressed:(id)sender
 {
-    
+    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:[NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, _stringChannel]];
+    [_bonjourOSCClient setOscDelegate:self];
 }
 
 -(IBAction)connectButtonPressed:(id)sender
 {
-    
+    [_bonjourOSCClient connectToStreamingServer];
 }
 
 -(IBAction)disconnectButtonPressed:(id)sender
 {
-    
+    [_bonjourOSCClient disconnectFromStreamingServer];
 }
 
 -(IBAction)dropBoxButtonPressed:(id)sender
@@ -188,11 +194,28 @@
     }
 }
 
+#pragma mark - Logviewcontroller methods and delegate
+
+- (void) loadLogViewController
+{
+    
+}
+
+- (void) dismissLogButtonPressed
+{
+    
+}
+
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self addObservers];
+    _stringChannel = @"1";
+    _stringLog = @"";
+    _blueTextColor = [UIColor colorWithRed:33.0/256.0 green:121.0/256.0 blue:250.0/256.0 alpha:1.0];
     
     if (![[DBSession sharedSession] isLinked])
     {
