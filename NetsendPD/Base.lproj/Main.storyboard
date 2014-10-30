@@ -265,7 +265,7 @@
         <!--Log View Controller-->
         <scene sceneID="ZQI-Fs-PHP">
             <objects>
-                <viewController id="wJA-6g-LdN" customClass="BRLogViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BRLogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wJA-6g-LdN" customClass="BRLogViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="07d-fe-Ini"/>
                         <viewControllerLayoutGuide type="bottom" id="ANM-7G-M7Q"/>

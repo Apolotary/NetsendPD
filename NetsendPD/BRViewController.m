@@ -32,7 +32,6 @@
 - (void) dropBoxUnlinkedSuccessfully;
 
 - (void) updateStatuses;
-- (void) loadLogViewController;
 
 @end
 
@@ -176,7 +175,13 @@
 
 -(IBAction)logButtonPressed:(id)sender
 {
+    if (!_logViewController)
+    {
+        _logViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BRLogViewController"];
+    }
     
+    [_logViewController setupWithIP:_stringIP bonjourName:_stringName status:_status log:_stringLog andDelegate:self];
+    [self presentViewController:_logViewController animated:YES completion:nil];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -194,16 +199,11 @@
     }
 }
 
-#pragma mark - Logviewcontroller methods and delegate
-
-- (void) loadLogViewController
-{
-    
-}
+#pragma mark - BRLogViewControllerDelegate
 
 - (void) dismissLogButtonPressed
 {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - View Lifecycle
