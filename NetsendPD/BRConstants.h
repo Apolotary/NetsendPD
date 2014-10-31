@@ -23,6 +23,8 @@
 
 extern NSString *const kNotificationDropboxLinked;
 extern NSString *const kNotificationDropboxUnLinked;
+extern NSString *const kNotificationDropboxUploadSuccess;
+extern NSString *const kNotificationDropboxUploadFailure;
 
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;

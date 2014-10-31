@@ -10,6 +10,8 @@
 
 NSString *const kNotificationDropboxLinked = @"NotificationDropboxLinked";
 NSString *const kNotificationDropboxUnLinked = @"NotificationDropboxUnLinked";
+NSString *const kNotificationDropboxUploadSuccess = @"NotificationDropboxUploadSuccess";
+NSString *const kNotificationDropboxUploadFailure = @"NotificationDropboxUploadFailure";
 
 NSString *const kBonjourDomain = @"local.";
 NSString *const kBonjourServiceType = @"_netsendpd._udp.";

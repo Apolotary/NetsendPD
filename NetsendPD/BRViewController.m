@@ -13,6 +13,8 @@
 
 #import "BRLogViewController.h"
 
+#import <MBProgressHUD.h>
+
 @interface BRViewController () <UIAlertViewDelegate, BonjourOSCReceiverDelegate, BRLogViewControllerDelegate>
 {
     BRBonjourOSCClient *_bonjourOSCClient;
@@ -35,6 +37,8 @@
 
 - (void) dropBoxLinkedSuccessfully;
 - (void) dropBoxUnlinkedSuccessfully;
+- (void) dropboxUploadSuccess;
+- (void) dropboxUploadFailure;
 
 - (void) updateStatuses;
 - (void) updateTrackingProgress:(id) sender;
@@ -50,12 +54,16 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropBoxLinkedSuccessfully) name:kNotificationDropboxLinked object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropBoxUnlinkedSuccessfully) name:kNotificationDropboxUnLinked object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropboxUploadSuccess) name:kNotificationDropboxUploadSuccess object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropboxUploadFailure) name:kNotificationDropboxUploadFailure object:nil];
 }
 
 - (void) removeObservers
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxLinked object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUnLinked object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUploadSuccess object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUploadFailure object:nil];
 }
 
 #pragma mark - Dropbox notifications
@@ -76,10 +84,23 @@
     [_buttonLinkDropBox setTitle:@"Link Dropbox" forState:UIControlStateNormal];
 }
 
+- (void) dropboxUploadSuccess
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"CSV uploaded successfully" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+- (void) dropboxUploadFailure
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Problem uploading CSV, check out debug logs for more info" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 #pragma mark - Showing messages
 
 - (void) showDropboxLinkMessage
 {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"We will use Dropbox to gather error data, please log into your account" delegate:self cancelButtonTitle:@"Log in" otherButtonTitles:nil, nil];
     alertView.tag = 1;
     [alertView show];
@@ -87,6 +108,7 @@
 
 - (void) showDropboxUnLinkMessage
 {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Do you really want to unlink your Dropbox account?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     alertView.tag = 1;
     [alertView show];
@@ -118,6 +140,9 @@
         
         [_errorTracker setIsTrackingErrors:NO];
         [_errorTracker setEndTime:_currentTime];
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         [_errorTracker writeAndUploadErrorReports];
     }
 }

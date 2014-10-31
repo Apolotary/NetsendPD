@@ -7,6 +7,7 @@
 //
 
 #import "BRErrorTracker.h"
+#import "BRConstants.h"
 #import <CHCSVParser.h>
 
 @interface BRErrorTracker () <DBRestClientDelegate>
@@ -86,7 +87,7 @@
 
 - (void)writeAndUploadErrorReports
 {
-    NSString *filename = [NSString stringWithFormat:@"%@_%f_%f", _clientName, _startTime, _endTime];
+    NSString *filename = [NSString stringWithFormat:@"%@_%f_%f.csv", _clientName, _startTime, _endTime];
     NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *localPath = [localDir stringByAppendingPathComponent:filename];
     [self writeCSVAtPath:localPath];
@@ -101,10 +102,13 @@
 - (void)restClient:(DBRestClient *)client uploadedFile:(NSString *)destPath from:(NSString *)srcPath metadata:(DBMetadata *)metadata
 {
     DDLogVerbose(@"File uploaded successfully to path: %@", metadata.path);
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxUploadSuccess object:nil userInfo:nil];
 }
 
-- (void)restClient:(DBRestClient *)client uploadFileFailedWithError:(NSError *)error {
+- (void)restClient:(DBRestClient *)client uploadFileFailedWithError:(NSError *)error
+{
     DDLogError(@"File upload failed with error: %@", error);
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxUploadFailure object:nil userInfo:nil];
 }
 
 
