@@ -27,6 +27,7 @@
     NSTimer *_errorTimer;
     
     UIColor *_blueTextColor;
+    NSTimeInterval _currentTime;
 }
 
 - (void) addObservers;
@@ -104,12 +105,20 @@
 
 - (void) updateTrackingProgress:(id) sender
 {
-    [_progressTimeSlider setValue:_errorTimer.timeInterval animated:YES];
+    _currentTime += 1.0;
+    [_progressTimeSlider setValue:_currentTime animated:YES];
+    [_progressTimeLabel setText:[NSString stringWithFormat:@"%1.0fs", _currentTime]];
     
-    if (_errorTimer.timeInterval == ERROR_TRACKING_TIME)
+    if (_currentTime == ERROR_TRACKING_TIME)
     {
+        [_errorTimer invalidate];
+        
+        [_progressTimeSlider setValue:0.0 animated:YES];
+        [_progressTimeLabel setText:@"0.0"];
+        
         [_errorTracker setIsTrackingErrors:NO];
-        [_errorTracker setEndTime:_errorTimer.timeInterval];
+        [_errorTracker setEndTime:_currentTime];
+        [_errorTracker writeAndUploadErrorReports];
     }
 }
 
@@ -124,7 +133,8 @@
     [_progressTimeSlider setMinimumValue:0.0];
     [_progressTimeSlider setMaximumValue:ERROR_TRACKING_TIME];
     
-    _errorTimer = [NSTimer scheduledTimerWithTimeInterval:ERROR_TRACKING_TIME target:self selector:@selector(updateTrackingProgress:) userInfo:nil repeats:NO];
+    _currentTime = 0.0;
+    _errorTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTrackingProgress:) userInfo:nil repeats:YES];
     [_errorTimer fire];
 }
 
@@ -161,8 +171,11 @@
 
 -(IBAction)advertiseButtonPressed:(id)sender
 {
-    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:[NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, _stringChannel]];
+    NSString *clientName = [NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, _stringChannel];
+    _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:clientName];
     [_bonjourOSCClient setOscDelegate:self];
+    [[BRErrorTracker sharedInstance] setClientName:clientName];
+    [self startErrorTracking];
 }
 
 -(IBAction)connectButtonPressed:(id)sender

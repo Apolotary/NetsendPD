@@ -14,6 +14,7 @@
 @property BOOL isTrackingErrors;
 @property NSTimeInterval startTime;
 @property NSTimeInterval endTime;
+@property NSString *clientName;
 
 + (instancetype)sharedInstance;
 
