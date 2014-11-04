@@ -225,7 +225,7 @@ static void udpreceive_tilde_datapoll(t_udpreceive_tilde *x)
             ++x->x_tag_errors;
             if (x->x_sync)
             {
-                post("Bad header tag from address: %s \n Error Timestamp: %d", x->x_hostname->s_name, (int)time(NULL));
+                post("badaddr: %s time: %d", x->x_hostname->s_name, (int)time(NULL));
                 error("udpreceive~: bad header tag (%d)", x->x_tag_errors);
             }
             x->x_sync = 0;

@@ -90,6 +90,17 @@ extern void udpreceive_tilde_setup(void);
 {
     DDLogVerbose(@"Pd print: %@", message);
     
+    // "badaddr: %s time: %d"
+    if ([message containsString:@"badaddr"])
+    {
+        NSRange addrRange = [message rangeOfString:@"badaddr: "];
+        NSRange timeRange = [message rangeOfString:@" time: "];
+        
+        NSString *addrString = [message substringWithRange:NSMakeRange(addrRange.length, timeRange.location - addrRange.length)];
+        NSString *timeString = [message substringFromIndex:timeRange.location + timeRange.length];
+        
+        [[BRErrorTracker sharedInstance] addErrorWithTimeStamp:[timeString doubleValue] andAddress:addrString];
+    }
 }
 
 @end

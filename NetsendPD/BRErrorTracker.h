@@ -18,7 +18,8 @@
 
 + (instancetype)sharedInstance;
 
-- (void)addErrorWithTimeStamp:(NSTimeInterval) errorTimeStamp;
+- (void)addErrorWithTimeStamp:(NSTimeInterval) errorTimeStamp
+                   andAddress:(NSString *) address;
 - (void)writeAndUploadErrorReports;
 
 @end

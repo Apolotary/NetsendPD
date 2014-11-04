@@ -45,9 +45,11 @@
 }
 
 - (void)addErrorWithTimeStamp:(NSTimeInterval) errorTimeStamp
+                   andAddress:(NSString *) address
 {
     if (_isTrackingErrors)
     {
+        DDLogVerbose(@"Error address; %@", address);
         [_errorTimeStampArray addObject:[NSNumber numberWithDouble:errorTimeStamp]];
     }
 }
