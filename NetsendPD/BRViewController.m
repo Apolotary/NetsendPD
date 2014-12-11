@@ -86,12 +86,14 @@
 
 - (void) dropboxUploadSuccess
 {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"CSV uploaded successfully" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
 }
 
 - (void) dropboxUploadFailure
 {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Problem uploading CSV, check out debug logs for more info" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
     [alert show];
 }

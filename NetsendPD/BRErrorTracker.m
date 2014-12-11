@@ -38,8 +38,6 @@
     if (self) {
         _errorTimeStampArray = [NSMutableArray array];
         _isTrackingErrors = NO;
-        _restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-        _restClient.delegate = self;
     }
     return self;
 }
@@ -58,31 +56,10 @@
 {
     CHCSVWriter * csvWriter = [[CHCSVWriter alloc] initForWritingToCSVFile:filePath];
     
-    NSMutableArray *timeArray = [NSMutableArray arrayWithObject:@"0"];
-    NSMutableArray *errorArray = [NSMutableArray arrayWithObject:@"0"];
-    
-    NSTimeInterval timeDifference = _endTime - _startTime;
-    
-    for (int i = 0; i <= timeDifference; i++)
+    for (NSInteger i = 0; i < _errorTimeStampArray.count; i++)
     {
-        [timeArray addObject:[NSString stringWithFormat:@"%i", i]];
-        
-        NSNumber *adjustedTime = [NSNumber numberWithDouble:(_startTime + (double)i)];
-        
-        if ([_errorTimeStampArray containsObject:adjustedTime])
-        {
-            [errorArray addObject:@"1"];
-        }
-        else
-        {
-            [errorArray addObject:@"0"];
-        }
-    }
-    
-    for (NSInteger i = 0; i < timeArray.count; i++)
-    {
-        [csvWriter writeField:[timeArray objectAtIndex:i]];
-        [csvWriter writeField:[errorArray objectAtIndex:i]];
+        [csvWriter writeField:[NSNumber numberWithInteger:i]];
+        [csvWriter writeField:[_errorTimeStampArray objectAtIndex:i]];
         [csvWriter finishLine];
     }
 }
@@ -96,6 +73,9 @@
     
     // Upload file to Dropbox
     NSString *destDir = @"/";
+    
+    _restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    _restClient.delegate = self;
     [_restClient uploadFile:filename toPath:destDir withParentRev:nil fromPath:localPath];
 }
 
