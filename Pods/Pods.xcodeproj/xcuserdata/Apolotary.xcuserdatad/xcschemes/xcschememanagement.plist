@@ -8,107 +8,34 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods-CocoaAsyncSocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Pods-CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>Pods-libpd.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>03DECB732CB8314AD214B210</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0516533D3E5D6D4B6B630C28</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>06DA72DC8118C06494E17EFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0F7EFB9A61E5212B0AD491FF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>127076F69B1D858CD6320813</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3D5BE1E8D1851E9CB82AB9D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>44767FC4AA10DEDD876D3E3B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>67935415D744A7768E5379DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>67F0C997A904A265CCADDFA2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>69AADD42B4245BACE83A8331</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DE11E3ADF5DC6613655B1346</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F8AA74E059ECD8283C6603AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
