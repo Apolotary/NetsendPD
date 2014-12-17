@@ -2,7 +2,7 @@ PODS:
   - CHCSVParser (2.1.0)
   - CocoaAsyncSocket (7.3.5)
   - CocoaLumberjack (1.9.2):
-    - CocoaLumberjack/Extensions
+    - CocoaLumberjack/Extensions (= 1.9.2)
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
@@ -23,4 +23,4 @@ SPEC CHECKSUMS:
   libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0
