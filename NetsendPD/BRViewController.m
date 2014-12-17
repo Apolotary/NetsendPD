@@ -8,12 +8,10 @@
 
 #import "BRViewController.h"
 #import "BRBonjourOSCClient.h"
-#import "BRErrorTracker.h"
+#import "BRPdManager.h"
 #import "BRConstants.h"
 
 #import "BRLogViewController.h"
-
-#import <MBProgressHUD.h>
 
 @interface BRViewController () <UIAlertViewDelegate, BonjourOSCReceiverDelegate, BRLogViewControllerDelegate>
 {
@@ -25,20 +23,14 @@
     NSString *_stringLog;
     BRConnectionStatus _status;
     
-    BRErrorTracker *_errorTracker;
     NSTimer *_errorTimer;
     
     UIColor *_blueTextColor;
     NSTimeInterval _currentTime;
 }
 
-- (void) addObservers;
-- (void) removeObservers;
-
-- (void) dropBoxLinkedSuccessfully;
-- (void) dropBoxUnlinkedSuccessfully;
-- (void) dropboxUploadSuccess;
-- (void) dropboxUploadFailure;
+- (void)addObservers;
+- (void)removeObservers;
 
 - (void) updateStatuses;
 - (void) updateTrackingProgress:(id) sender;
@@ -48,74 +40,6 @@
 
 @implementation BRViewController
 
-#pragma mark - Working with observers
-
-- (void) addObservers
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropBoxLinkedSuccessfully) name:kNotificationDropboxLinked object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropBoxUnlinkedSuccessfully) name:kNotificationDropboxUnLinked object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropboxUploadSuccess) name:kNotificationDropboxUploadSuccess object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropboxUploadFailure) name:kNotificationDropboxUploadFailure object:nil];
-}
-
-- (void) removeObservers
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxLinked object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUnLinked object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUploadSuccess object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDropboxUploadFailure object:nil];
-}
-
-#pragma mark - Dropbox notifications
-
-- (void) dropBoxLinkedSuccessfully
-{
-    // dropbox linked, start advertising service
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Dropbox linked successfully, now pick a channel and press advertise button to start" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
-    [alert show];
-    [_buttonLinkDropBox setTitle:@"Unlink Dropbox" forState:UIControlStateNormal];
-}
-
-- (void) dropBoxUnlinkedSuccessfully
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Dropbox unlinked successfully, you need to login again to upload data" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
-    [alert show];
-    [_buttonLinkDropBox setTitle:@"Link Dropbox" forState:UIControlStateNormal];
-}
-
-- (void) dropboxUploadSuccess
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"CSV uploaded successfully" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
-}
-
-- (void) dropboxUploadFailure
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Problem uploading CSV, check out debug logs for more info" delegate:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil, nil];
-    [alert show];
-}
-
-#pragma mark - Showing messages
-
-- (void) showDropboxLinkMessage
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"We will use Dropbox to gather error data, please log into your account" delegate:self cancelButtonTitle:@"Log in" otherButtonTitles:nil, nil];
-    alertView.tag = 1;
-    [alertView show];
-}
-
-- (void) showDropboxUnLinkMessage
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Do you really want to unlink your Dropbox account?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    alertView.tag = 1;
-    [alertView show];
-}
-
 #pragma mark - Updating statuses 
 
 - (void) updateStatuses
@@ -123,6 +47,12 @@
     _stringIP = _bonjourOSCClient.localIP;
     _stringName = _bonjourOSCClient.service.name;
     _status = _bonjourOSCClient.connectionStatus;
+}
+
+- (void)printErrorInfo:(NSNotification *)notification
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Test Results" message:[NSString stringWithFormat:@"%@ : %@ \n %@ : %@ \n %@ : %@ \n %@ : %@", kErrorDictKeyOverflow, notification.userInfo[kErrorDictKeyOverflow], kErrorDictKeyUnderflow, notification.userInfo[kErrorDictKeyUnderflow], kErrorDictKeyTagError, notification.userInfo[kErrorDictKeyTagError], kErrorDictKeyPackets, notification.userInfo[kErrorDictKeyPackets]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 #pragma mark - Timer and Slider methods
@@ -140,23 +70,12 @@
         [_progressTimeSlider setValue:0.0 animated:YES];
         [_progressTimeLabel setText:@"0.0"];
         
-        [_errorTracker setIsTrackingErrors:NO];
-        [_errorTracker setEndTime:_currentTime];
-        
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-        [_errorTracker writeAndUploadErrorReports];
+        [[BRPdManager sharedInstance] getErrorInfo];
     }
 }
 
 - (void) startErrorTracking
 {
-    NSTimeInterval timeRightNow = [[NSDate date] timeIntervalSince1970];
-    
-    _errorTracker = [BRErrorTracker sharedInstance];
-    [_errorTracker setStartTime:timeRightNow];
-    [_errorTracker setIsTrackingErrors:YES];
-    
     [_progressTimeSlider setMinimumValue:0.0];
     [_progressTimeSlider setMaximumValue:ERROR_TRACKING_TIME];
     
@@ -201,7 +120,6 @@
     NSString *clientName = [NSString stringWithFormat:@"%@%@", kBonjourServiceNameTemplate, _stringChannel];
     _bonjourOSCClient = [[BRBonjourOSCClient alloc] initWithServiceName:clientName];
     [_bonjourOSCClient setOscDelegate:self];
-    [[BRErrorTracker sharedInstance] setClientName:clientName];
     [self startErrorTracking];
 }
 
@@ -213,18 +131,6 @@
 -(IBAction)disconnectButtonPressed:(id)sender
 {
     [_bonjourOSCClient disconnectFromStreamingServer];
-}
-
--(IBAction)dropBoxButtonPressed:(id)sender
-{
-    if ([[DBSession sharedSession] isLinked])
-    {
-        [self showDropboxUnLinkMessage];
-    }
-    else
-    {
-        [self showDropboxLinkMessage];
-    }
 }
 
 -(IBAction)logButtonPressed:(id)sender
@@ -257,19 +163,16 @@
     _stringLog = [NSString stringWithFormat:@"%@ \n %@", _stringLog, message];
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - Adding / Removing observers
 
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)addObservers
 {
-    // Dropbox login
-    if (alertView.tag == 1)
-    {
-        [[DBSession sharedSession] linkFromController:self];
-    }
-    else if (alertView.tag == 2 && buttonIndex != alertView.cancelButtonIndex)
-    {
-        [[DBSession sharedSession] unlinkAll];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printErrorInfo:) name:kNotificationInfoReceived object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationInfoReceived object:nil];
 }
 
 #pragma mark - BRLogViewControllerDelegate
@@ -285,35 +188,27 @@
 {
     [super viewDidLoad];
     
-    [self addObservers];
     _stringChannel = @"1";
     _stringLog = @"";
     _blueTextColor = [UIColor colorWithRed:33.0/256.0 green:121.0/256.0 blue:250.0/256.0 alpha:1.0];
-    
-    if (![[DBSession sharedSession] isLinked])
-    {
-        [self showDropboxLinkMessage];
-    }
-    else
-    {
-        [_buttonLinkDropBox setTitle:@"Unlink Dropbox" forState:UIControlStateNormal];
-    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self addObservers];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self removeObservers];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self addObservers];
-}
-
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [self removeObservers];
 }
 
 @end

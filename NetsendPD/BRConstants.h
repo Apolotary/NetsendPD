@@ -19,12 +19,9 @@
 #define OSC_PATCH_RECEIVE_PORT 3002
 #define OSC_UDPRECEIVE_PORT @"1349"
 
-#define ERROR_TRACKING_TIME 60 // seconds, or 1 min
+#define ERROR_TRACKING_TIME 60 // seconds
 
-extern NSString *const kNotificationDropboxLinked;
-extern NSString *const kNotificationDropboxUnLinked;
-extern NSString *const kNotificationDropboxUploadSuccess;
-extern NSString *const kNotificationDropboxUploadFailure;
+extern NSString *const kNotificationInfoReceived;
 
 extern NSString *const kBonjourDomain;
 extern NSString *const kBonjourServiceType;
@@ -37,6 +34,11 @@ extern NSString *const kOSCPatternClientStream;
 
 extern NSString *const kOSCMessageConnect;
 extern NSString *const kOSCMessageDisconnect;
+
+extern NSString *const kErrorDictKeyOverflow;
+extern NSString *const kErrorDictKeyUnderflow;
+extern NSString *const kErrorDictKeyTagError;
+extern NSString *const kErrorDictKeyPackets;
 
 @interface BRConstants : NSObject
 

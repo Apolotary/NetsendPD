@@ -20,5 +20,6 @@
 
 - (void) sendBufferSize: (int) buffer;
 - (void) sendPortNumber: (int) portNumber;
+- (void) getErrorInfo;
 
 @end

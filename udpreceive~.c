@@ -225,7 +225,7 @@ static void udpreceive_tilde_datapoll(t_udpreceive_tilde *x)
             ++x->x_tag_errors;
             if (x->x_sync)
             {
-                post("badaddr: %s time: %d", x->x_hostname->s_name, (int)time(NULL));
+//                post("badaddr: %s time: %d", x->x_hostname->s_name, (int)time(NULL));
                 error("udpreceive~: bad header tag (%d)", x->x_tag_errors);
             }
             x->x_sync = 0;
@@ -663,6 +663,8 @@ static void udpreceive_tilde_info(t_udpreceive_tilde *x)
     /* total tag errors */
     SETFLOAT(list, (t_float)x->x_tag_errors);
     outlet_anything(x->x_outlet2, ps_tag_errors, 1, list);
+    
+    post("Info: {\"overflow\" : %i, \"underflow\" : %i, \"tag errors\" : %i, \"packets\" : %i}", x->x_overflow, x->x_underflow, x->x_tag_errors, x->x_counter);
 
     outlet_list(x->x_addrout, &s_list, 5L, x->x_addrbytes);
 }

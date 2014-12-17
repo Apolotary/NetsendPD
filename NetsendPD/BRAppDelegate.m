@@ -31,38 +31,7 @@
     BRPdManager *pdManager = [BRPdManager sharedInstance];
     [pdManager openPatch:@"receive_pd.pd" withPath:[[NSBundle mainBundle] bundlePath]];
     
-    NSString* appKey = @"0nvhp9ngucy4tgc";
-    NSString* appSecret = @"q7ojpf5qzj7d3fl";
-    NSString *root = kDBRootAppFolder;
-    
-    DBSession* session =
-    [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
-    [DBSession setSharedSession:session];
-    
     return YES;
-}
-
-- (BOOL)application:(UIApplication *)app
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)source
-         annotation:(id)annotation
-{
-    if ([[DBSession sharedSession] handleOpenURL:url])
-    {
-        if ([[DBSession sharedSession] isLinked])
-        {
-            DDLogVerbose(@"Linked successfully");
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxLinked object:nil];
-        }
-        else
-        {
-            DDLogVerbose(@"Unlinked successfully");
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDropboxUnLinked object:nil];
-        }
-        return YES;
-    }
-    DDLogError(@"Can't link the app");
-    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

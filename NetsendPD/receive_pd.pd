@@ -1,4 +1,4 @@
-#N canvas 348 138 736 491 10;
+#N canvas 178 275 736 491 10;
 #X obj 198 101 print udpreceive~;
 #X symbolatom -147 188 10 0 0 0 - - -;
 #X floatatom -113 122 5 0 0 0 - - -;
@@ -48,6 +48,7 @@ must be in that order.;
 #X obj -242 -14 dac~ 1;
 #X obj -358 -172 r udpreceive_buffer;
 #X obj -325 -140 r udpreceive_port;
+#X obj -267 -103 r info;
 #X connect 5 0 1 0;
 #X connect 23 0 18 0;
 #X connect 23 1 19 0;
@@ -72,3 +73,4 @@ must be in that order.;
 #X connect 37 3 23 0;
 #X connect 39 0 37 0;
 #X connect 40 0 37 0;
+#X connect 41 0 37 0;

@@ -7,7 +7,7 @@
 //
 
 #import "BRPdManager.h"
-#import "BRErrorTracker.h"
+#import "BRConstants.h"
 #import "PdAudioController.h"
 #import "PdBase.h"
 
@@ -40,10 +40,7 @@ extern void udpreceive_tilde_setup(void);
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
-        // initialize error tracker before Pds
-        [BRErrorTracker sharedInstance];
-        
+    if (self) {        
         [PdBase initialize];
         [PdBase setDelegate:self];
         [PdBase computeAudio:YES];
@@ -84,6 +81,11 @@ extern void udpreceive_tilde_setup(void);
     [PdBase sendMessage:[NSString stringWithFormat:@"%i", portNumber] withArguments:nil toReceiver:@"udpreceive_port"];
 }
 
+- (void) getErrorInfo
+{
+    [PdBase sendMessage:@"info" withArguments:nil toReceiver:@"info"];
+}
+
 #pragma mark - PDReceiverDelegate
 
 - (void)receivePrint:(NSString *)message
@@ -91,15 +93,16 @@ extern void udpreceive_tilde_setup(void);
     DDLogVerbose(@"Pd print: %@", message);
     
     // "badaddr: %s time: %d"
-    if ([message containsString:@"badaddr"])
+    if ([message containsString:@"Info: "])
     {
-        NSRange addrRange = [message rangeOfString:@"badaddr: "];
-        NSRange timeRange = [message rangeOfString:@" time: "];
+        NSRange addrRange = [message rangeOfString:@"Info: "];
+        NSString *jsonString = [message substringFromIndex:addrRange.length];
+
+        NSError *error;
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSStringEncodingConversionAllowLossy] options:NSJSONReadingAllowFragments error:&error];
+        DDLogVerbose(@"jsonDict: %@", jsonDict);
         
-        NSString *addrString = [message substringWithRange:NSMakeRange(addrRange.length, timeRange.location - addrRange.length)];
-        NSString *timeString = [message substringFromIndex:timeRange.location + timeRange.length];
-        
-        [[BRErrorTracker sharedInstance] addErrorWithTimeStamp:[timeString doubleValue] andAddress:addrString];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationInfoReceived object:nil userInfo:jsonDict];
     }
 }
 

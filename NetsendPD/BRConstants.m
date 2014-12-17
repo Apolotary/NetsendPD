@@ -8,10 +8,7 @@
 
 #import "BRConstants.h"
 
-NSString *const kNotificationDropboxLinked = @"NotificationDropboxLinked";
-NSString *const kNotificationDropboxUnLinked = @"NotificationDropboxUnLinked";
-NSString *const kNotificationDropboxUploadSuccess = @"NotificationDropboxUploadSuccess";
-NSString *const kNotificationDropboxUploadFailure = @"NotificationDropboxUploadFailure";
+NSString *const kNotificationInfoReceived = @"NotificationInfoReceived";
 
 NSString *const kBonjourDomain = @"local.";
 NSString *const kBonjourServiceType = @"_netsendpd._udp.";
@@ -24,6 +21,11 @@ NSString *const kOSCPatternClientStream = @"/stream";
 
 NSString *const kOSCMessageConnect = @"connect";
 NSString *const kOSCMessageDisconnect = @"disconnect";
+
+NSString *const kErrorDictKeyOverflow = @"overflow";
+NSString *const kErrorDictKeyUnderflow = @"underflow";
+NSString *const kErrorDictKeyTagError = @"tag errors";
+NSString *const kErrorDictKeyPackets = @"packets";
 
 @implementation BRConstants
 

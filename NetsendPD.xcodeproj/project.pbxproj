@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A4AAC0519FF280400FCA88F /* BRErrorTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AAC0419FF280400FCA88F /* BRErrorTracker.m */; };
 		0A5025FC1A007CC400FC0A8F /* BRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */; };
-		0A5025FE1A00969800FC0A8F /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5025FD1A00969800FC0A8F /* DropboxSDK.framework */; };
 		0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5025FF1A0096AE00FC0A8F /* Security.framework */; };
 		0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */ = {isa = PBXBuildFile; fileRef = 0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */; };
 		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
@@ -72,8 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A4AAC0319FF280400FCA88F /* BRErrorTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRErrorTracker.h; sourceTree = "<group>"; };
-		0A4AAC0419FF280400FCA88F /* BRErrorTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRErrorTracker.m; sourceTree = "<group>"; };
 		0A5025FA1A007CC400FC0A8F /* BRLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRLogViewController.h; sourceTree = "<group>"; };
 		0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLogViewController.m; sourceTree = "<group>"; };
 		0A5025FD1A00969800FC0A8F /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 				0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */,
 				43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */,
 				43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */,
-				0A5025FE1A00969800FC0A8F /* DropboxSDK.framework in Frameworks */,
 				43868A4D1928EB590047149D /* CoreGraphics.framework in Frameworks */,
 				43868A4F1928EB590047149D /* UIKit.framework in Frameworks */,
 				43868A4B1928EB590047149D /* Foundation.framework in Frameworks */,
@@ -262,8 +257,6 @@
 				437123FC19968EBC00960D10 /* BRBonjourOSCClient.m */,
 				43D017A11998B713003B610E /* BRConstants.h */,
 				43D017A21998B713003B610E /* BRConstants.m */,
-				0A4AAC0319FF280400FCA88F /* BRErrorTracker.h */,
-				0A4AAC0419FF280400FCA88F /* BRErrorTracker.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -525,7 +518,6 @@
 				431E2931192A5AD000F8646B /* udpreceive~.c in Sources */,
 				4371242219968ECB00960D10 /* F53OSCBundle.m in Sources */,
 				431E2926192A59D100F8646B /* tcpsend.c in Sources */,
-				0A4AAC0519FF280400FCA88F /* BRErrorTracker.m in Sources */,
 				431E2927192A59D100F8646B /* tcpserver.c in Sources */,
 				4371242619968ECB00960D10 /* F53OSCParser.m in Sources */,
 				431E2928192A59D100F8646B /* udpreceive.c in Sources */,

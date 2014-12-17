@@ -27,7 +27,6 @@
 -(IBAction)connectButtonPressed:(id)sender;
 -(IBAction)disconnectButtonPressed:(id)sender;
 
--(IBAction)dropBoxButtonPressed:(id)sender;
 -(IBAction)logButtonPressed:(id)sender;
 
 @end

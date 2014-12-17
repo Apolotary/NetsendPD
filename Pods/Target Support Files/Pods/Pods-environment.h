@@ -6,12 +6,6 @@
 // project.
 
 
-// CHCSVParser
-#define COCOAPODS_POD_AVAILABLE_CHCSVParser
-#define COCOAPODS_VERSION_MAJOR_CHCSVParser 2
-#define COCOAPODS_VERSION_MINOR_CHCSVParser 1
-#define COCOAPODS_VERSION_PATCH_CHCSVParser 0
-
 // CocoaAsyncSocket
 #define COCOAPODS_POD_AVAILABLE_CocoaAsyncSocket
 #define COCOAPODS_VERSION_MAJOR_CocoaAsyncSocket 7
@@ -35,12 +29,6 @@
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack_Extensions 1
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 9
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 2
-
-// MBProgressHUD
-#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
-#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
-#define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
-#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
 // libpd
 #define COCOAPODS_POD_AVAILABLE_libpd
