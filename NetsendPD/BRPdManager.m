@@ -20,6 +20,7 @@ extern void udpreceive_tilde_setup(void);
 }
 
 - (instancetype) init;
+- (void)resetInfo;
 
 @end
 
@@ -86,6 +87,11 @@ extern void udpreceive_tilde_setup(void);
     [PdBase sendMessage:@"info" withArguments:nil toReceiver:@"info"];
 }
 
+- (void)resetInfo
+{
+    [PdBase sendMessage:@"reset" withArguments:nil toReceiver:@"info"];
+}
+
 #pragma mark - PDReceiverDelegate
 
 - (void)receivePrint:(NSString *)message
@@ -93,16 +99,18 @@ extern void udpreceive_tilde_setup(void);
     DDLogVerbose(@"Pd print: %@", message);
     
     // "badaddr: %s time: %d"
-    if ([message containsString:@"Info: "])
+    
+    NSRange addrRange = [message rangeOfString:@"Info: "];
+    if (addrRange.length != 0)
     {
-        NSRange addrRange = [message rangeOfString:@"Info: "];
         NSString *jsonString = [message substringFromIndex:addrRange.length];
-
+        
         NSError *error;
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSStringEncodingConversionAllowLossy] options:NSJSONReadingAllowFragments error:&error];
         DDLogVerbose(@"jsonDict: %@", jsonDict);
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationInfoReceived object:nil userInfo:jsonDict];
+        [self resetInfo];
     }
 }
 

@@ -1,6 +1,6 @@
 # NetsendPD
 
-A multi-channel audio streaming proof of concept for Pd+iOS architecture. 
+A multi-channel audio streaming proof of concept for Pd+iOS architecture.
 
 In a nutshell, this project allows you to stream any multi (2 and more) channel audio from your Mac/PC server in realtime to your mobile iOS clients. At the same time, clients are able to communicate with server via OSC protocol.
 
@@ -19,7 +19,7 @@ In a nutshell, this project allows you to stream any multi (2 and more) channel 
 
 ## Setup and usage
 
-Simply open up the Pd patch in project folder, run a python script in the same place, and finally build and run an iOS application. 
+Simply open up the Pd patch in project folder, run a python script in the same place, and finally build and run an iOS application.
 
 For the best experience **[check out this short tutorial in wiki](https://github.com/Apolotary/NetsendPD/wiki/Setup-and-usage)**
 

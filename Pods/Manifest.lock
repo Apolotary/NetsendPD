@@ -1,5 +1,5 @@
 PODS:
-  - CocoaAsyncSocket (7.3.5)
+  - CocoaAsyncSocket (7.4.1)
   - CocoaLumberjack (1.9.2):
     - CocoaLumberjack/Extensions (= 1.9.2)
   - CocoaLumberjack/Core (1.9.2)
@@ -13,8 +13,8 @@ DEPENDENCIES:
   - libpd (~> 0.7)
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f
+  CocoaAsyncSocket: 7cbf214b27f8e7f7574db6a3fd96352ffaed433d
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  libpd: 73e50c4998c95addfb7c47bd9054b9c40019d3fc
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.0

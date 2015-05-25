@@ -1,4 +1,4 @@
-#N canvas 71 202 779 423 10;
+#N canvas 195 123 779 423 10;
 #X declare -lib mrpeach;
 #N canvas 547 397 336 325 stream 0;
 #X obj 64 69 inlet;
@@ -384,7 +384,7 @@
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
 #X restore 462 373 pd stream;
-#N canvas 238 74 685 297 audio_source 1;
+#N canvas 419 392 685 297 audio_source 1;
 #N canvas 680 411 398 300 audio_source_noise 0;
 #X obj -109 24 osc~ 440;
 #X obj -14 22 noise~;
@@ -631,7 +631,7 @@
 #X connect 13 0 1 0;
 #X connect 13 1 2 0;
 #X restore 544 17 pd earplug_test;
-#N canvas 385 312 784 234 inlet_test 0;
+#N canvas 385 312 784 234 inlet_test 1;
 #X obj 122 46 inlet~;
 #X obj 205 45 inlet~;
 #X obj 287 48 inlet~;
@@ -650,7 +650,7 @@
 #X connect 3 0 7 0;
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
-#X restore 386 130 pd inlet_test;
+#X restore 67 175 pd inlet_test;
 #N canvas 235 22 839 649 VBAP_test 0;
 #X obj 21 427 inlet~;
 #X obj 73 427 inlet~;
@@ -669,13 +669,13 @@
 #X floatatom 427 288 0 0 0 3 actual_elevation - -;
 #X floatatom 437 267 7 0 0 1 actual_spreading - -;
 #X obj 368 155 hsl 100 13 -180 180 0 1 empty empty azimuth 10 7 0 10
--262144 -1 -1 4900 1;
+-262144 -1 -1 6100 1;
 #X floatatom 443 210 5 0 0 2 - - -;
 #X obj 446 193 hsl 100 13 0 100 0 1 empty empty spread 10 7 0 10 -262144
--1 -1 7200 1;
+-1 -1 0 1;
 #X text 336 107 to output updated values;
 #X obj 318 128 metro 100;
-#X obj 318 106 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 318 106 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 403 173 (ignore elevation in 2D \, that's for 3D);
 #X obj 269 497 *~;
@@ -696,12 +696,13 @@ front). This is a classic 5.1 setup.;
 #X obj 318 349 route 0 1 2 3 4;
 #X text 27 344 Based on VBAP example from documentation;
 #X msg 304 66 define_loudspeakers 2 -45 45;
+#X obj 344 208 int;
 #X connect 0 0 23 0;
 #X connect 1 0 24 0;
 #X connect 2 0 29 0;
 #X connect 3 0 30 0;
 #X connect 4 0 34 0;
-#X connect 10 0 35 1;
+#X connect 10 0 39 0;
 #X connect 11 0 23 1;
 #X connect 12 0 24 1;
 #X connect 16 0 10 0;
@@ -729,16 +730,13 @@ front). This is a classic 5.1 setup.;
 #X connect 36 3 28 0;
 #X connect 36 4 33 0;
 #X connect 38 0 35 0;
-#X restore 289 156 pd VBAP_test;
+#X connect 39 0 35 1;
+#X restore 82 126 pd VBAP_test;
+#X connect 0 0 13 0;
+#X connect 0 1 13 1;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
-#X connect 5 0 13 0;
-#X connect 5 1 13 1;
-#X connect 5 2 13 2;
-#X connect 5 3 13 3;
-#X connect 5 4 13 4;
-#X connect 5 5 13 5;
 #X connect 7 0 2 0;
 #X restore 36 69 pd audio_source;
 #X text 138 69 pick audio source here;

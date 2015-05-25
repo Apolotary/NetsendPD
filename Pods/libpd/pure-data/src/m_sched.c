@@ -1,6 +1,6 @@
 /* Copyright (c) 1997-1999 Miller Puckette.
-* For information on usage and redistribution, and for a DISCLAIMER OF ALL
-* WARRANTIES, see the file, "LICENSE.txt," in this distribution.  */
+ * For information on usage and redistribution, and for a DISCLAIMER OF ALL
+ * WARRANTIES, see the file, "LICENSE.txt," in this distribution.  */
 
 /*  scheduling stuff  */
 
@@ -11,8 +11,8 @@
 #include <windows.h>
 #endif
 
-    /* LATER consider making this variable.  It's now the LCM of all sample
-    rates we expect to see: 32000, 44100, 48000, 88200, 96000. */
+/* LATER consider making this variable.  It's now the LCM of all sample
+ rates we expect to see: 32000, 44100, 48000, 88200, 96000. */
 #define TIMEUNITPERMSEC (32. * 441.)
 #define TIMEUNITPERSECOND (TIMEUNITPERMSEC * 1000.)
 
@@ -73,7 +73,7 @@ void clock_unset(t_clock *x)
     }
 }
 
-    /* set the clock to call back at an absolute system time */
+/* set the clock to call back at an absolute system time */
 void clock_set(t_clock *x, double setticks)
 {
     if (setticks < sys_time) setticks = sys_time;
@@ -83,7 +83,7 @@ void clock_set(t_clock *x, double setticks)
     {
         t_clock *cbefore, *cafter;
         for (cbefore = clock_setlist, cafter = clock_setlist->c_next;
-            cbefore; cbefore = cafter, cafter = cbefore->c_next)
+             cbefore; cbefore = cafter, cafter = cbefore->c_next)
         {
             if (!cafter || cafter->c_settime > setticks)
             {
@@ -96,17 +96,17 @@ void clock_set(t_clock *x, double setticks)
     else x->c_next = clock_setlist, clock_setlist = x;
 }
 
-    /* set the clock to call back after a delay in msec */
+/* set the clock to call back after a delay in msec */
 void clock_delay(t_clock *x, double delaytime)
 {
     clock_set(x, (x->c_unit > 0 ?
-        sys_time + x->c_unit * delaytime : 
-            sys_time - (x->c_unit*(TIMEUNITPERSECOND/sys_dacsr)) * delaytime));
+                  sys_time + x->c_unit * delaytime :
+                  sys_time - (x->c_unit*(TIMEUNITPERSECOND/sys_dacsr)) * delaytime));
 }
 
-    /* set the time unit in msec or (if 'samps' is set) in samples.  This
-    is flagged by setting c_unit negative.  If the clock is currently set,
-    recalculate the delay based on the new unit and reschedule */
+/* set the time unit in msec or (if 'samps' is set) in samples.  This
+ is flagged by setting c_unit negative.  If the clock is currently set,
+ recalculate the delay based on the new unit and reschedule */
 void clock_setunit(t_clock *x, double timeunit, int sampflag)
 {
     double timeleft;
@@ -115,12 +115,12 @@ void clock_setunit(t_clock *x, double timeunit, int sampflag)
     /* if no change, return to avoid truncation errors recalculating delay */
     if ((sampflag && (timeunit == -x->c_unit)) ||
         (!sampflag && (timeunit == x->c_unit * TIMEUNITPERMSEC)))
-            return;
+        return;
     
-        /* figure out time left in the units we were in */
+    /* figure out time left in the units we were in */
     timeleft = (x->c_settime < 0 ? -1 :
-        (x->c_settime - sys_time)/((x->c_unit > 0)? x->c_unit :
-            (x->c_unit*(TIMEUNITPERSECOND/sys_dacsr))));
+                (x->c_settime - sys_time)/((x->c_unit > 0)? x->c_unit :
+                                           (x->c_unit*(TIMEUNITPERSECOND/sys_dacsr))));
     if (sampflag)
         x->c_unit = -timeunit;  /* negate to flag sample-based */
     else x->c_unit = timeunit * TIMEUNITPERMSEC;
@@ -128,37 +128,37 @@ void clock_setunit(t_clock *x, double timeunit, int sampflag)
         clock_delay(x, timeleft);
 }
 
-    /* get current logical time.  We don't specify what units this is in;
-    use clock_gettimesince() to measure intervals from time of this call. */
+/* get current logical time.  We don't specify what units this is in;
+ use clock_gettimesince() to measure intervals from time of this call. */
 double clock_getlogicaltime( void)
 {
     return (sys_time);
 }
 
-    /* OBSOLETE (misleading) function name kept for compatibility */
+/* OBSOLETE (misleading) function name kept for compatibility */
 double clock_getsystime( void) { return (sys_time); }
 
-    /* elapsed time in milliseconds since the given system time */
+/* elapsed time in milliseconds since the given system time */
 double clock_gettimesince(double prevsystime)
 {
     return ((sys_time - prevsystime)/TIMEUNITPERMSEC);
 }
 
-    /* elapsed time in units, ala clock_setunit(), since given system time */
+/* elapsed time in units, ala clock_setunit(), since given system time */
 double clock_gettimesincewithunits(double prevsystime,
-    double units, int sampflag)
+                                   double units, int sampflag)
 {
-            /* If in samples, divide TIMEUNITPERSECOND/sys_dacsr first (at
-            cost of an extra division) since it's probably an integer and if
-            units == 1 and (sys_time - prevsystime) is an integer number of
-            DSP ticks, the result will be exact. */
+    /* If in samples, divide TIMEUNITPERSECOND/sys_dacsr first (at
+     cost of an extra division) since it's probably an integer and if
+     units == 1 and (sys_time - prevsystime) is an integer number of
+     DSP ticks, the result will be exact. */
     if (sampflag)
         return ((sys_time - prevsystime)/
-            ((TIMEUNITPERSECOND/sys_dacsr)*units));
+                ((TIMEUNITPERSECOND/sys_dacsr)*units));
     else return ((sys_time - prevsystime)/(TIMEUNITPERMSEC*units));
 }
 
-    /* what value the system clock will have after a delay */
+/* what value the system clock will have after a delay */
 double clock_getsystimeafter(double delaytime)
 {
     return (sys_time + TIMEUNITPERMSEC * delaytime);
@@ -171,7 +171,7 @@ void clock_free(t_clock *x)
 }
 
 /* the following routines maintain a real-execution-time histogram of the
-various phases of real-time execution. */
+ various phases of real-time execution. */
 
 static int sys_bin[] = {0, 2, 5, 10, 20, 30, 50, 100, 1000};
 #define NBIN (sizeof(sys_bin)/sizeof(*sys_bin))
@@ -199,18 +199,18 @@ void sys_printhist( void)
         if (doit)
         {
             post("%2d %8d %8d %8d %8d %8d %8d %8d %8d", i,
-                sys_histogram[i][0],
-                sys_histogram[i][1],
-                sys_histogram[i][2],
-                sys_histogram[i][3],
-                sys_histogram[i][4],
-                sys_histogram[i][5],
-                sys_histogram[i][6],
-                sys_histogram[i][7]);
+                 sys_histogram[i][0],
+                 sys_histogram[i][1],
+                 sys_histogram[i][2],
+                 sys_histogram[i][3],
+                 sys_histogram[i][4],
+                 sys_histogram[i][5],
+                 sys_histogram[i][6],
+                 sys_histogram[i][7]);
         }
     }
     post("dsp %d, pollgui %d, nothing %d",
-        sched_diddsp, sched_didpoll, sched_didnothing);
+         sched_diddsp, sched_didpoll, sched_didnothing);
 }
 
 static int sys_histphase;
@@ -222,7 +222,7 @@ int sys_addhist(int phase)
     int msec = (newtime - sys_histtime) * 1000.;
     for (j = NBIN-1; j >= 0; j--)
     {
-        if (msec >= sys_bin[j]) 
+        if (msec >= sys_bin[j])
         {
             sys_histogram[phasewas][j]++;
             break;
@@ -247,11 +247,11 @@ static t_resync oss_resync[NRESYNC];
 
 
 static char *(oss_errornames[]) = {
-"unknown",
-"ADC blocked",
-"DAC blocked",
-"A/D/A sync",
-"data late"
+    "unknown",
+    "ADC blocked",
+    "DAC blocked",
+    "A/D/A sync",
+    "data late"
 };
 
 void glob_audiostatus(void)
@@ -271,9 +271,9 @@ void glob_audiostatus(void)
             errtype = 0;
         
         post("%9.2f\t%s",
-            (sched_diddsp - oss_resync[nresyncphase].r_ntick)
-                * ((double)sys_schedblocksize) / sys_dacsr,
-            oss_errornames[errtype]);
+             (sched_diddsp - oss_resync[nresyncphase].r_ntick)
+             * ((double)sys_schedblocksize) / sys_dacsr,
+             oss_errornames[errtype]);
         nresyncphase--;
     }
 }
@@ -295,11 +295,11 @@ void sys_log_error(int type)
         sched_diored = 1;
     }
     sched_dioredtime =
-        sched_diddsp + (int)(sys_dacsr /(double)sys_schedblocksize);
+    sched_diddsp + (int)(sys_dacsr /(double)sys_schedblocksize);
 }
 
 static int sched_lastinclip, sched_lastoutclip,
-    sched_lastindb, sched_lastoutdb;
+sched_lastindb, sched_lastoutdb;
 
 void glob_watchdog(t_pd *dummy);
 
@@ -307,19 +307,19 @@ static void sched_pollformeters( void)
 {
     int inclip, outclip, indb, outdb;
     static int sched_nextmeterpolltime, sched_nextpingtime;
-
-        /* if there's no GUI but we're running in "realtime", here is
-        where we arrange to ping the watchdog every 2 seconds. */
+    
+    /* if there's no GUI but we're running in "realtime", here is
+     where we arrange to ping the watchdog every 2 seconds. */
 #if defined(__linux__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__GNU__)
     if (sys_nogui && sys_hipriority && (sched_diddsp - sched_nextpingtime > 0))
     {
         glob_watchdog(0);
-            /* ping every 2 seconds */
+        /* ping every 2 seconds */
         sched_nextpingtime = sched_diddsp +
-            2 * (int)(sys_dacsr /(double)sys_schedblocksize);
+        2 * (int)(sys_dacsr /(double)sys_schedblocksize);
     }
 #endif
-
+    
     if (sched_diddsp - sched_nextmeterpolltime < 0)
         return;
     if (sched_diored && (sched_diddsp - sched_dioredtime > 0))
@@ -351,7 +351,7 @@ static void sched_pollformeters( void)
         sched_lastoutdb = outdb;
     }
     sched_nextmeterpolltime =
-        sched_diddsp + (int)(sys_dacsr /(double)sys_schedblocksize);
+    sched_diddsp + (int)(sys_dacsr /(double)sys_schedblocksize);
 }
 
 void glob_meters(void *dummy, t_float f)
@@ -360,7 +360,7 @@ void glob_meters(void *dummy, t_float f)
         sys_getmeters(0, 0);
     sched_meterson = (f != 0);
     sched_lastinclip = sched_lastoutclip = sched_lastindb = sched_lastoutdb =
-        -1;
+    -1;
 }
 
 #if 0
@@ -390,20 +390,20 @@ void sched_set_using_audio(int flag)
         sched_referencerealtime = sys_getrealtime();
         sched_referencelogicaltime = clock_getlogicaltime();
     }
-        if (flag == SCHED_AUDIO_CALLBACK &&
-            sched_useaudio != SCHED_AUDIO_CALLBACK)
-                sys_quit = SYS_QUIT_RESTART;
-        if (flag != SCHED_AUDIO_CALLBACK &&
-            sched_useaudio == SCHED_AUDIO_CALLBACK)
-                post("sorry, can't turn off callbacks yet; restart Pd");
-                    /* not right yet! */
-        
+    if (flag == SCHED_AUDIO_CALLBACK &&
+        sched_useaudio != SCHED_AUDIO_CALLBACK)
+        sys_quit = SYS_QUIT_RESTART;
+    if (flag != SCHED_AUDIO_CALLBACK &&
+        sched_useaudio == SCHED_AUDIO_CALLBACK)
+        post("sorry, can't turn off callbacks yet; restart Pd");
+    /* not right yet! */
+    
     sys_time_per_dsp_tick = (TIMEUNITPERSECOND) *
-        ((double)sys_schedblocksize) / sys_dacsr;
+    ((double)sys_schedblocksize) / sys_dacsr;
     sys_vgui("pdtk_pd_audio %s\n", flag ? "on" : "off");
 }
 
-    /* take the scheduler forward one DSP tick, also handling clock timeouts */
+/* take the scheduler forward one DSP tick, also handling clock timeouts */
 void sched_tick(double next_sys_time)
 {
     int countdown = 5000;
@@ -429,34 +429,34 @@ void sched_tick(double next_sys_time)
 }
 
 /*
-Here is Pd's "main loop."  This routine dispatches clock timeouts and DSP
-"ticks" deterministically, and polls for input from MIDI and the GUI.  If
-we're left idle we also poll for graphics updates; but these are considered
-lower priority than the rest.
-
-The time source is normally the audio I/O subsystem via the "sys_send_dacs()"
-call.  This call returns true if samples were transferred; false means that
-the audio I/O system is still busy with previous transfers.
-*/
+ Here is Pd's "main loop."  This routine dispatches clock timeouts and DSP
+ "ticks" deterministically, and polls for input from MIDI and the GUI.  If
+ we're left idle we also poll for graphics updates; but these are considered
+ lower priority than the rest.
+ 
+ The time source is normally the audio I/O subsystem via the "sys_send_dacs()"
+ call.  This call returns true if samples were transferred; false means that
+ the audio I/O system is still busy with previous transfers.
+ */
 
 void sys_pollmidiqueue( void);
 void sys_initmidiqueue( void);
 
- /* sys_idlehook is a hook the user can fill in to grab idle time.  Return
-nonzero if you actually used the time; otherwise we're really really idle and
-will now sleep. */
+/* sys_idlehook is a hook the user can fill in to grab idle time.  Return
+ nonzero if you actually used the time; otherwise we're really really idle and
+ will now sleep. */
 int (*sys_idlehook)(void);
 
 static void m_pollingscheduler( void)
 {
     int idlecount = 0;
     sys_time_per_dsp_tick = (TIMEUNITPERSECOND) *
-        ((double)sys_schedblocksize) / sys_dacsr;
-
+    ((double)sys_schedblocksize) / sys_dacsr;
+    
 #if THREAD_LOCKING
-        sys_lock();
+    sys_lock();
 #endif
-
+    
     sys_clearhist();
     if (sys_sleepgrain < 100)
         sys_sleepgrain = sys_schedadvance/4;
@@ -469,16 +469,16 @@ static void m_pollingscheduler( void)
     {
         int didsomething = 0;
         int timeforward;
-
+        
         sys_addhist(0);
     waitfortick:
         if (sched_useaudio != SCHED_AUDIO_NONE)
         {
 #if THREAD_LOCKING
-            /* T.Grill - send_dacs may sleep -> 
-                unlock thread lock make that time available 
-                - could messaging do any harm while sys_send_dacs is running?
-            */
+            /* T.Grill - send_dacs may sleep ->
+             unlock thread lock make that time available
+             - could messaging do any harm while sys_send_dacs is running?
+             */
             sys_unlock();
 #endif
             timeforward = sys_send_dacs();
@@ -486,7 +486,7 @@ static void m_pollingscheduler( void)
             /* T.Grill - done */
             sys_lock();
 #endif
-                /* if dacs remain "idle" for 1 sec, they're hung up. */
+            /* if dacs remain "idle" for 1 sec, they're hung up. */
             if (timeforward != 0)
                 idlecount = 0;
             else
@@ -497,11 +497,11 @@ static void m_pollingscheduler( void)
                     static double idletime;
                     if (sched_useaudio != SCHED_AUDIO_POLL)
                     {
-                            bug("m_pollingscheduler\n");
-                            return;
+                        bug("m_pollingscheduler\n");
+                        return;
                     }
-                        /* on 32nd idle, start a clock watch;  every
-                        32 ensuing idles, check it */
+                    /* on 32nd idle, start a clock watch;  every
+                     32 ensuing idles, check it */
                     if (idlecount == 32)
                         idletime = sys_getrealtime();
                     else if (sys_getrealtime() - idletime > 1.)
@@ -518,7 +518,7 @@ static void m_pollingscheduler( void)
         {
             if (1000. * (sys_getrealtime() - sched_referencerealtime)
                 > clock_gettimesince(sched_referencelogicaltime))
-                    timeforward = SENDDACS_YES;
+                timeforward = SENDDACS_YES;
             else timeforward = SENDDACS_NO;
         }
         sys_setmiditimediff(0, 1e-6 * sys_schedadvance);
@@ -527,7 +527,7 @@ static void m_pollingscheduler( void)
             sched_tick(sys_time + sys_time_per_dsp_tick);
         if (timeforward == SENDDACS_YES)
             didsomething = 1;
-
+        
         sys_addhist(2);
         sys_pollmidiqueue();
         if (sys_pollgui())
@@ -537,7 +537,7 @@ static void m_pollingscheduler( void)
             didsomething = 1;
         }
         sys_addhist(3);
-            /* test for idle; if so, do graphics updates. */
+        /* test for idle; if so, do graphics updates. */
         if (!didsomething)
         {
             sched_pollformeters();
@@ -545,10 +545,10 @@ static void m_pollingscheduler( void)
 #if THREAD_LOCKING
             sys_unlock();   /* unlock while we idle */
 #endif
-                /* call externally installed idle function if any. */
+            /* call externally installed idle function if any. */
             if (!sys_idlehook || !sys_idlehook())
             {
-                    /* if even that had nothing to do, sleep. */
+                /* if even that had nothing to do, sleep. */
                 if (timeforward != SENDDACS_SLEPT)
                     sys_microsleep(sys_sleepgrain);
             }
@@ -559,7 +559,7 @@ static void m_pollingscheduler( void)
             sched_didnothing++;
         }
     }
-
+    
 #if THREAD_LOCKING
     sys_unlock();
 #endif
@@ -627,7 +627,7 @@ int m_mainloop(void)
 int m_batchmain(void)
 {
     sys_time_per_dsp_tick = (TIMEUNITPERSECOND) *
-        ((double)sys_schedblocksize) / sys_dacsr;
+    ((double)sys_schedblocksize) / sys_dacsr;
     while (sys_quit != SYS_QUIT_QUIT)
         sched_tick(sys_time + sys_time_per_dsp_tick);
     return (0);
