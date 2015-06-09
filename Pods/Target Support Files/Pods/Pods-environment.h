@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 9
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 2
 
+// EstimoteSDK
+#define COCOAPODS_POD_AVAILABLE_EstimoteSDK
+#define COCOAPODS_VERSION_MAJOR_EstimoteSDK 3
+#define COCOAPODS_VERSION_MINOR_EstimoteSDK 2
+#define COCOAPODS_VERSION_PATCH_EstimoteSDK 5
+
 // libpd
 #define COCOAPODS_POD_AVAILABLE_libpd
 #define COCOAPODS_VERSION_MAJOR_libpd 0

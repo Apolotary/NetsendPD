@@ -1,6 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/EstimoteSDK/EstimoteSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/libpd"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" -isystem "${PODS_ROOT}/Headers/Public/CocoaLumberjack" -isystem "${PODS_ROOT}/Headers/Public/libpd"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CocoaAsyncSocket" -l"Pods-CocoaLumberjack" -l"Pods-libpd" -framework "CFNetwork" -framework "Foundation" -framework "Security"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/EstimoteSDK" "${PODS_ROOT}/Headers/Public/libpd" "${PODS_ROOT}/Headers/EstimoteSDK"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/EstimoteSDK"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" -isystem "${PODS_ROOT}/Headers/Public/CocoaLumberjack" -isystem "${PODS_ROOT}/Headers/Public/EstimoteSDK" -isystem "${PODS_ROOT}/Headers/Public/libpd"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CocoaAsyncSocket" -l"Pods-CocoaLumberjack" -l"Pods-libpd" -framework "CFNetwork" -framework "CoreBluetooth" -framework "CoreLocation" -framework "EstimoteSDK" -framework "Foundation" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

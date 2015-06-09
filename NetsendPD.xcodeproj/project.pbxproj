@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0A5025FC1A007CC400FC0A8F /* BRLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5025FB1A007CC400FC0A8F /* BRLogViewController.m */; };
 		0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5025FF1A0096AE00FC0A8F /* Security.framework */; };
+		0AA8E7471B13773C00C0F004 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA8E7461B13773C00C0F004 /* CoreLocation.framework */; };
+		0AA8E7491B13774100C0F004 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA8E7481B13774100C0F004 /* CoreBluetooth.framework */; };
+		0AA8E7511B13EC2C00C0F004 /* APLMonitoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8E74E1B13EC2C00C0F004 /* APLMonitoringViewController.m */; };
+		0AA8E7521B13EC2C00C0F004 /* APLDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8E7501B13EC2C00C0F004 /* APLDefaults.m */; };
+		0AA8E7551B13EC4900C0F004 /* APLUUIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8E7541B13EC4900C0F004 /* APLUUIDViewController.m */; };
 		0AB8BACF192C9FAB0042DCE5 /* send_pd.pd in Resources */ = {isa = PBXBuildFile; fileRef = 0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */; };
 		431E2922192A59D100F8646B /* httpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2905192A59BB00F8646B /* httpreceive.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		431E2923192A59D100F8646B /* httpreq.c in Sources */ = {isa = PBXBuildFile; fileRef = 431E2907192A59BB00F8646B /* httpreq.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
@@ -77,6 +82,14 @@
 		0A5026011A0096B800FC0A8F /* libPods-CocoaAsyncSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CocoaAsyncSocket.a"; path = "Pods/build/Debug-iphoneos/libPods-CocoaAsyncSocket.a"; sourceTree = "<group>"; };
 		0A5026021A0096B800FC0A8F /* libPods-CocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CocoaLumberjack.a"; path = "Pods/build/Debug-iphoneos/libPods-CocoaLumberjack.a"; sourceTree = "<group>"; };
 		0A5026031A0096B800FC0A8F /* libPods-libpd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-libpd.a"; path = "Pods/build/Debug-iphoneos/libPods-libpd.a"; sourceTree = "<group>"; };
+		0AA8E7461B13773C00C0F004 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0AA8E7481B13774100C0F004 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		0AA8E74D1B13EC2C00C0F004 /* APLMonitoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLMonitoringViewController.h; sourceTree = "<group>"; };
+		0AA8E74E1B13EC2C00C0F004 /* APLMonitoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLMonitoringViewController.m; sourceTree = "<group>"; };
+		0AA8E74F1B13EC2C00C0F004 /* APLDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLDefaults.h; sourceTree = "<group>"; };
+		0AA8E7501B13EC2C00C0F004 /* APLDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLDefaults.m; sourceTree = "<group>"; };
+		0AA8E7531B13EC4900C0F004 /* APLUUIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLUUIDViewController.h; sourceTree = "<group>"; };
+		0AA8E7541B13EC4900C0F004 /* APLUUIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLUUIDViewController.m; sourceTree = "<group>"; };
 		0AB8BACE192C9FAB0042DCE5 /* send_pd.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = send_pd.pd; sourceTree = "<group>"; };
 		2BACFA8D017E1C5A07022539 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		431E2905192A59BB00F8646B /* httpreceive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = httpreceive.c; sourceTree = "<group>"; };
@@ -160,6 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA8E7491B13774100C0F004 /* CoreBluetooth.framework in Frameworks */,
+				0AA8E7471B13773C00C0F004 /* CoreLocation.framework in Frameworks */,
 				0A5026001A0096AE00FC0A8F /* Security.framework in Frameworks */,
 				43619CD31929F770006084CF /* AVFoundation.framework in Frameworks */,
 				43619CCF1929F769006084CF /* AudioToolbox.framework in Frameworks */,
@@ -183,6 +198,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AA8E74C1B13EC1A00C0F004 /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				0AA8E7531B13EC4900C0F004 /* APLUUIDViewController.h */,
+				0AA8E7541B13EC4900C0F004 /* APLUUIDViewController.m */,
+				0AA8E74D1B13EC2C00C0F004 /* APLMonitoringViewController.h */,
+				0AA8E74E1B13EC2C00C0F004 /* APLMonitoringViewController.m */,
+				0AA8E74F1B13EC2C00C0F004 /* APLDefaults.h */,
+				0AA8E7501B13EC2C00C0F004 /* APLDefaults.m */,
+			);
+			name = iBeacon;
+			sourceTree = "<group>";
+		};
 		431E28FF192A598300F8646B /* udp sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +324,8 @@
 		43868A491928EB590047149D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AA8E7481B13774100C0F004 /* CoreBluetooth.framework */,
+				0AA8E7461B13773C00C0F004 /* CoreLocation.framework */,
 				0A5026011A0096B800FC0A8F /* libPods-CocoaAsyncSocket.a */,
 				0A5026021A0096B800FC0A8F /* libPods-CocoaLumberjack.a */,
 				0A5026031A0096B800FC0A8F /* libPods-libpd.a */,
@@ -316,6 +346,7 @@
 		43868A501928EB590047149D /* NetsendPD */ = {
 			isa = PBXGroup;
 			children = (
+				0AA8E74C1B13EC1A00C0F004 /* iBeacon */,
 				43850360192EC7FE00FFE2C3 /* ViewControllers */,
 				4385035F192EC7F800FFE2C3 /* Model */,
 				43868A591928EB590047149D /* BRAppDelegate.h */,
@@ -420,6 +451,11 @@
 				TargetAttributes = {
 					43868A461928EB590047149D = {
 						DevelopmentTeam = JYXK2RF942;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					43868A671928EB590047149D = {
 						TestTargetID = 43868A461928EB590047149D;
@@ -518,6 +554,7 @@
 				431E2931192A5AD000F8646B /* udpreceive~.c in Sources */,
 				4371242219968ECB00960D10 /* F53OSCBundle.m in Sources */,
 				431E2926192A59D100F8646B /* tcpsend.c in Sources */,
+				0AA8E7511B13EC2C00C0F004 /* APLMonitoringViewController.m in Sources */,
 				431E2927192A59D100F8646B /* tcpserver.c in Sources */,
 				4371242619968ECB00960D10 /* F53OSCParser.m in Sources */,
 				431E2928192A59D100F8646B /* udpreceive.c in Sources */,
@@ -530,6 +567,7 @@
 				4371242E19968ECB00960D10 /* NSData+F53OSCBlob.m in Sources */,
 				4371242919968ECB00960D10 /* F53OSCTimeTag.m in Sources */,
 				0A5025FC1A007CC400FC0A8F /* BRLogViewController.m in Sources */,
+				0AA8E7551B13EC4900C0F004 /* APLUUIDViewController.m in Sources */,
 				4371242D19968ECB00960D10 /* MetatoneNetworkManager.m in Sources */,
 				4371242F19968ECB00960D10 /* NSDate+F53OSCTimeTag.m in Sources */,
 				43868A5B1928EB590047149D /* BRAppDelegate.m in Sources */,
@@ -537,6 +575,7 @@
 				4371243119968ECB00960D10 /* NSString+F53OSCString.m in Sources */,
 				43850363192EC81C00FFE2C3 /* BRPdManager.m in Sources */,
 				4371242419968ECB00960D10 /* F53OSCMessage.m in Sources */,
+				0AA8E7521B13EC2C00C0F004 /* APLDefaults.m in Sources */,
 				4371242719968ECB00960D10 /* F53OSCServer.m in Sources */,
 				43868A571928EB590047149D /* main.m in Sources */,
 			);
@@ -675,6 +714,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
@@ -703,6 +743,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetsendPD/NetsendPD-Prefix.pch";
 				INFOPLIST_FILE = "NetsendPD/NetsendPD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",

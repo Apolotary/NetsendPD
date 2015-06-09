@@ -30,7 +30,7 @@ currentBonjourClient = BonjourClient()
 
 def get_server_ip():
     for ifaceName in interfaces():
-        if ifaceName == 'en1':
+        if ifaceName == 'en0':
             address = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] )]
             return address[0]
 
@@ -156,7 +156,7 @@ def browse_callback(sdRef, flags, interfaceIndex, errorCode, serviceName,
         for bonjourClient in resolvedClients:
             if bonjourClient.name == serviceName:
                 osc_send_bonjour_disconnect_message(bonjourClient)
-                resolvedClients.remove(bonjourClient) 
+                resolvedClients.remove(bonjourClient)
 
         return
 

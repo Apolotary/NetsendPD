@@ -17,7 +17,6 @@
 {
     F53OSCClient *_oscClient;
     F53OSCServer *_oscServer;
-    int _channelNumber;
 }
 
 @end

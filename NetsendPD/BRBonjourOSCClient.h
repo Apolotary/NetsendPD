@@ -39,6 +39,8 @@ typedef enum BRConnectionStatus : NSUInteger {
 @property (strong, nonatomic) NSString *localIP;
 @property (strong, nonatomic) NSString *serverIP;
 
+@property int channelNumber;
+
 @property (weak, nonatomic) id<BonjourOSCReceiverDelegate> oscDelegate;
 @property BRConnectionStatus connectionStatus;
 

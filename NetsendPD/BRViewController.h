@@ -11,6 +11,8 @@
 @interface BRViewController : UIViewController
 {
     IBOutlet UILabel *_progressTimeLabel;
+    IBOutlet UILabel *_iBeaconLabel;
+    IBOutlet UILabel *_channelSelectionLabel;
     IBOutlet UISlider *_progressTimeSlider;
     
     IBOutlet UIButton *_buttonAdvertise;
@@ -26,6 +28,8 @@
 -(IBAction)advertiseButtonPressed:(id)sender;
 -(IBAction)connectButtonPressed:(id)sender;
 -(IBAction)disconnectButtonPressed:(id)sender;
+
+-(IBAction)setupButtonPressed:(id)sender;
 
 -(IBAction)logButtonPressed:(id)sender;
 

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Bektur Ryskeldiev. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+
 #import "BRAppDelegate.h"
 
 #import "DDASLLogger.h"
@@ -17,6 +19,8 @@
 
 @interface BRAppDelegate ()
 
+@property CLLocationManager *locationManager;
+
 - (void) setupLogger;
 
 @end
@@ -26,6 +30,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupLogger];
+    
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+            [[self locationManager] requestAlwaysAuthorization];
+    }
     
     // initializing pure data
     BRPdManager *pdManager = [BRPdManager sharedInstance];
